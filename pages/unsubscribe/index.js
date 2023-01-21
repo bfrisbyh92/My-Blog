@@ -39,7 +39,7 @@ export default function Unsubscribe() {
   return (
     <div className="">
       <SEO
-        title="Unsubscribe / Jaagrav"
+        title="Unsubscribe / Frisby"
         description="Sorry to see you go, you can unsubscribe from my newsletter anytime you want to stop receiving mails from me."
         image="https://blog.jaagrav.in/assets/images/home-page.webp"
       />

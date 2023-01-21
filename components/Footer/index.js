@@ -19,17 +19,14 @@ export default function Footer() {
         <div className="">
           <div className="">
             <p className="text-white text-base leading-10">
-              Monster Monster under my bed, come out and play cause I
+              Feel free to
             </p>
-            <h1 className="text-white text-5xl mt-2">Need a friend!</h1>
+            <h1 className="text-white text-5xl mt-2">Reach out</h1>
             <p className="text-white text-xl leading-10 mt-4">
-              Ever wanna get in touch with me, hire me or just hang out with me?
-              Feel free to contact me any time, it can be by filling a form,
-              emailing me, direct messaging on social media or... Yeah
-              that&apos;s it, don&apos;t ever call me, I hate smart phones.
+              if you want to collaborate, have work, or are in need of anyone with a diverse tech skillset between penetration testing, web and mobile app development, and Python automation scripts. Also open to just networking with other people that have similiar passions.
             </p>
             <div className="flex justify-start items-center gap-6 h-fit mt-6">
-              <Link href="https://jaagrav.in/contact">
+              <Link href="https://brendanfrisby.vercel.app/contact">
                 <a
                   className={`inline-block w-full md:w-fit text-center md:text-left px-8 py-2 text-white text-xl border-white border-2 rounded-xl transition shadow-none hover:shadow-xl hover:scale-105`}
                 >
@@ -38,7 +35,7 @@ export default function Footer() {
               </Link>
               <a
                 className="text-white text-3xl w-fit inline "
-                href="https://github.com/Jaagrav"
+                href="https://github.com/bfrisbyh92"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -46,31 +43,31 @@ export default function Footer() {
               </a>
               <a
                 className="text-white text-3xl w-fit inline "
-                href="https://linkedin.com/in/jaagrav"
+                href="https://linkedin.com/in/brendan-frisby"
                 target="_blank"
                 rel="noreferrer"
               >
                 <FiLinkedin />
               </a>
-              <a
+              {/* <a
                 className="text-white text-3xl w-fit inline "
                 href="https://www.youtube.com/c/TheCoders"
                 target="_blank"
                 rel="noreferrer"
               >
                 <FiYoutube />
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 className="text-white text-3xl w-fit inline "
                 href="https://twitter.com/xJaagrav"
                 target="_blank"
                 rel="noreferrer"
               >
                 <FiTwitter />
-              </a>
+              </a> */}
               <a
                 className="text-white text-3xl w-fit inline "
-                href="mailto:contact@jaagrav.in"
+                href="mailto:contact@bfrisbyh92@gmail.com"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -78,7 +75,7 @@ export default function Footer() {
               </a>
               <a
                 className="text-white text-3xl w-fit inline "
-                href="https://jaagrav.in"
+                href="https://brendanfrisby.vercel.app"
                 target="_blank"
                 rel="noreferrer"
               >

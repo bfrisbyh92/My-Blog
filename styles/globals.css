@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Sulphur Point";
+  font-weight: lighter;
+  src: url(/assets/fonts/SulphurPoint-Light.ttf);
+}
+
+@font-face {
+  font-family: "Sulphur Point";
+  font-weight: normal;
+  src: url(/assets/fonts/SulphurPoint-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Sulphur Point";
+  font-weight: bold;
+  src: url(/assets/fonts/SulphurPoint-Bold.ttf);
+}
+
+* {
+  font-family: "Sulphur Point", sans-serif;
+  /* font-weight: bold; */
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+:root {
+  --background: #151b28;
+  --background-b: #2a3241;
+  --pink: #513bff;
+  --indigo: #5cd700;
+  --text: #fff;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  transition: 250ms;
+  background-color: var(--background);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.hidingHeader {
+  z-index: 9999 !important;
+}
+
+.markdown h1 {
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+}
+.markdown h2 {
+  font-size: 2rem;
+  margin: 1.25rem 0;
+}
+.markdown h3 {
+  font-size: 1.5rem;
+  margin: 1.25rem 0;
+}
+.markdown img {
+  width: 100%;
+  margin: 1.25rem 0;
+  border-radius: 1rem;
+}
+.markdown a {
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
+.markdown blockquote {
+  border-left: 0.25rem solid rgba(255, 255, 255, 0.25);
+  padding: 1rem;
+  margin: 0.25rem 0;
+}
+.markdown p {
+  line-height: 2rem;
+  margin: 0.25rem 0;
+  font-size: 1.25rem;
+}
+.markdown code {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+}
+.markdown pre div {
+  background: none !important;
+  padding: 0 !important;
+}
+.markdown pre code {
+  display: block;
+  padding: 1.5rem;
+  border: none !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  font-size: 1.15rem !important;
+  overflow-x: auto;
+}
+.markdown pre code * {
+  font-family: monospace !important;
+}
+.markdown ul {
+  list-style: circle;
+  padding-left: 1.2rem;
+}
+.markdown li {
+  padding: 0.5rem 0;
+  font-size: 1.25rem;
+}
+.markdown iframe {
+  width: 100%;
+  height: 40vh;
+  border-radius: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+@media screen and (max-width: 360px) {
+  html,
+  body {
+    font-size: 9px;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 411px) {
+  html,
+  body {
+    font-size: 11px;
+  }
+  .markdown p,
+  .markdown li {
+    line-height: 3rem;
+    font-size: 1.75rem;
+  }
+  .markdown h1 {
+    font-size: 3.5rem;
+  }
+  .markdown h2 {
+    font-size: 3rem;
+  }
+  .markdown h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 411px) and (max-width: 769px) {
+  html,
+  body {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}

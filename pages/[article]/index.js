@@ -14,7 +14,7 @@ export default function Blog(props) {
   return (
     <div>
       <SEO
-        title={`${props?.file?.title} / Blogs / Jaagrav`}
+        title={`${props?.file?.title} / Blogs / Frisby`}
         description={props?.file?.excerpt}
         image={`https://blog.jaagrav.in/assets/blogs-media/${props?.article}/thumbnail.webp`}
       />

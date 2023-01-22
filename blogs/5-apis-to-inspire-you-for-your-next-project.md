@@ -1,89 +1,210 @@
 ---
-title: 5 APIs to inspire you for your next project
-publishedOn: December 14, 2020
-excerpt: Confused? About what you should make as your next project? Here are 5 Awesome APIs that you guys would thank me for mentioning here. Check them out, you might discover some new APIs which might help you to not only get ideas but also implement them in your next project.
+title: Nmap Scripts - Next Level
+publishedOn: December 13th, 2022
+excerpt: I want to show how powerful nmap can be, with it's built in 595 NSE script library of DOS, Vulnerability, Discovery, and many more catgeories these scripts are seperated into. You can choose to call them individually, or call an entire category like 'vuln' and check for every vulnerability test nmap has. 
 readingTime: 4 mins
 ---
+------------
+# Next Level Nmap Scripts
+## By Brendan Frisby
+I want to talk about nmap scripts, because I often see that things on Metasploit about 75% of the modules can also be accomplished using Nmap. At this time there are 595 NSE scripts that come along with Nmap. They are continiously updated and the number fluctuates. These scripts are also conveniently seperated into catageroies and we will go in to whyI think that's important later. First let's make sure everyone is up and running. We are about to get deep into nmap, and by the end of this read you will be able to use every NSE script within the Nmap framework like a professional.
+----------
+### Some recources I made awhile ago - [Notion Page on Nmap Scripts](https://www.notion.so/alwayspwnable/Nmap-Scripts-28c7b4cb923e4785b9d189a6ddae4e0e)
+--------------
+Okay so depending what OS you are on, and what package manager you are using you will need to install Nmap differently. I'n my current case on a Mac M1 with Homebrew I am going to give the command...
 
-Confused? About what you should make as your next project? Here are 5 Awesome APIs that you guys would thank me for mentioning here. Check them out, you might discover some new APIs which might help you to not only get ideas but also implement them in your next project.
+`brew install nmap`
 
-All of the APIs that I have mentioned down below are REST APIs that you can run using simple `POST` and `GET` methods.
+Yours may be...
 
-> Click on the API names/headers in order to go to their docs
+ `sudo apt install nmap` , `sudo apt-get install nmap`, `macports install nmap`, or `Any Package Manager in the World, please install thy nmap(this one may not work)`.
+ 
+Now that we have nmap, let's find the scripts and have a look.  
 
-# #1 [CodeX Code Compiler API](https://github.com/Jaagrav/CodeX#something-special-for-other-developers)
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="LYRxWBR" data-user="jaagrav" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/jaagrav/pen/LYRxWBR">
-  CodeX</a> by Jaagrav (<a href="https://codepen.io/jaagrav">@jaagrav</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+*Mine are located at /opt/homebrew/share/nmap/scripts so I will...
 
-Ever thought of building a website from where you could compile and execute Java, C++, Swift, Python code? Well that's where the CodeX API comes in use, now there are various APIs on the market to compile and execute code but none of them are completely free unlike the CodeX API. It is dead easy to compile and execute code and fetch the output. In this codepen, you can compile and execute and store your code just by clicking on New Class! The CodeX API currently supports upto 8 languages that you can compile and execute, know more about it down below!
 
-## [Check out docs on Github](https://github.com/Jaagrav/CodeX)
+  `cd /opt/homebrew/share/nmap/scripts`
 
-# #2 [Responsive Voice TTS API](https://responsivevoice.org/api/)
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="YzGNVqe" data-user="jaagrav" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/jaagrav/pen/YzGNVqe">
-  Responsive Voice API</a> by Jaagrav (<a href="https://codepen.io/jaagrav">@jaagrav</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+The only other location and on most windows based machines, maybe even some M1's with Homebrew if that's installed in /usr/local will still be in /share/nmap/scripts.
 
-> You can change the text in the input above, try putting your name
+  `cd /share/nmap/scripts`
 
-Now you're gonna fall in love with this API. This API is too good to not talk about. Haven't you always wanted that if your chatbot/website could literally speak!! That's when we talk about the Responsive Voice API which is super easy to use, it is a Text-To-Speech API where you can even change the speaker's accent, language, gender, etc. Isn't this API awesome go check out it's docs by clicking on it's title above.
+I suggest looking around at these, using tools like less/cat to take a look at the actual file and usage of it when called. You want to look at the script arguements to see the correct way to run a script.
 
-# #3 [AcoBot AI ChatBot API](https://rapidapi.com/Acobot/api/brainshop-ai)
+  `ls`
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="qBaRrQa" data-user="jaagrav" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/jaagrav/pen/qBaRrQa">
-  AcoBot API test</a> by Jaagrav (<a href="https://codepen.io/jaagrav">@jaagrav</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+  `ls | grep http`
 
-Every developer has always dreamed of creating something with AI. Be it a robot or just a chatbot that gives mature replies to your questions. Now whenever we've made a chatbot, it's always been a bunch of if-else clauses that could return replies to only specific questions that we would train it for. But with the AcoBot API you can easily add a smart AI chatbot to your website to whom your users can converse with for fun, try out the codepen example to get a glimpse of what it can do.
+![frisby.zsh](../public/assets/blogs-media/5-apis-to-inspire-you-for-your-next-project/frisby.png)
 
-# #4 [Instagram Accounts Search API](https://developers.facebook.com/blog/post/2018/10/31/instagram-graph-api-hashtag-search-launch/)
+  `ls | grep brute`
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="MWjJpMg" data-user="jaagrav" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/jaagrav/pen/MWjJpMg">
-  Instagram Search API test</a> by Jaagrav (<a href="https://codepen.io/jaagrav">@jaagrav</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        afp-brute.nse
+        ajp-brute.nse
+        backorifice-brute.nse
+        cassandra-brute.nse
+        cics-user-brute.nse
+        citrix-brute-xml.nse
+        cvs-brute-repository.nse
+        cvs-brute.nse
+        deluge-rpc-brute.nse
+        dicom-brute.nse
+        dns-brute.nse
+        domcon-brute.nse
+        dpap-brute.nse
+        drda-brute.nse
+        ftp-brute.nse
+        http-brute.nse
+        http-form-brute.nse
+        http-iis-short-name-brute.nse
+        http-joomla-brute.nse
+        http-proxy-brute.nse
+        http-wordpress-brute.nse
+        iax2-brute.nse
+        imap-brute.nse
+        informix-brute.nse
+        ipmi-brute.nse
+        irc-brute.nse
+        irc-sasl-brute.nse
+        iscsi-brute.nse
+        ldap-brute.nse
+        membase-brute.nse
+        metasploit-msgrpc-brute.nse
+        metasploit-xmlrpc-brute.nse
+        mikrotik-routeros-brute.nse
+        mmouse-brute.nse
+        mongodb-brute.nse
+        ms-sql-brute.nse
+        mysql-brute.nse
+        nessus-brute.nse
+        nessus-xmlrpc-brute.nse
+        netbus-brute.nse
+        nexpose-brute.nse
+        nje-node-brute.nse
+        nje-pass-brute.nse
+        nping-brute.nse
+        omp2-brute.nse
+        openvas-otp-brute.nse
+        oracle-brute-stealth.nse
+        oracle-brute.nse
+        oracle-sid-brute.nse
+        pcanywhere-brute.nse
+        pgsql-brute.nse
+        pop3-brute.nse
+        redis-brute.nse
+        rexec-brute.nse
+        rlogin-brute.nse
+        rpcap-brute.nse
+        rsync-brute.nse
+        rtsp-url-brute.nse
+        sip-brute.nse
+        smb-brute.nse
+        smtp-brute.nse
+        snmp-brute.nse
+        socks-brute.nse
+        ssh-brute.nse
+        svn-brute.nse
+        telnet-brute.nse
+        tso-brute.nse
+        vmauthd-brute.nse
+        vnc-brute.nse
+        xmpp-brute.nse
 
-Imagine making a website where you could look up your crush's instagram/twitter/linkedin accounts all in one place, you could make something like that, and make it easy for other people to find their friends' accounts on different platforms all at one place. Here's the Instagram Search API, you can use it to search people on Instagram, it's fast, reliable and very easy to use, check the codepen in order to understand how the API works and click on the header link in order to read the docs.
+  `ls | grep form`
 
-# #5 [Currency Convertor API](https://free.currencyconverterapi.com)
+      http-form-brute.nse
+      http-form-fuzzer.nse
+      informix-brute.nse
+      informix-query.nse
+      informix-tables.nse
+-----------
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="GRjrmRd" data-user="jaagrav" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/jaagrav/pen/GRjrmRd">
-  Conva Currency Convertor</a> by Jaagrav (<a href="https://codepen.io/jaagrav">@jaagrav</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-If you're a beginner, I am pretty sure you like to challenge yourself and push yourself to build complex projects and that's why building something like a currency convertor is gonna be very beneficial for you. Hence here's the free currency convertor API that you can use in order to convert various currencies to various other currencies!
+[I highly reccommend bookmarking this. It is a list of every nmap script and information about each](https://www.infosecmatter.com/nmap-nse-library/)
 
-And those were the APIs folks! Comment down below your favourite API(s), you may also mention any unique/awesome API that you want others to know in the comments down below!
+-----------
+## [Check me out on Github](https://github.com/bfrisbyh92)
+---------
 
-Here's a video by Zeno Rocha that I found where he has mentioned some HTML5, JavaScript Navigator APIs and many more that you might not have ever heard about. These APIs are stupid easy to use and too awesome to not be used in your next project, I would really suggest you to watch this whole video and not skip a part of it because you might miss out on some very exciting APIs.
+> I'll give 5 examples how nmap scipting can be used. Also going to share a few tips and tricks. 
 
-<iframe src="https://www.youtube.com/embed/EZpdEljk5dY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+I am going to do a few common tasks that both Nmap and Metasploit can be used for. Sometimes Nmap even has an advantage over Metasploit. A good example of that is Nmap has a Slowloris DOS Vulnerability Check Script, in addition to a Slowloris DOS Attack Script. Metasploit only has the DOS attack. So It's important to know the best tool for the specific job you are working on. 
+---------------------------
 
-Now one last thing, for those who are interested in using the [CodeX API](https://github.com/Jaagrav/CodeX), I recently built this API after a lot of hardwork that you guys can use for free in order to compile and execute in languages like Java, C++, C#, C, Swift, Python, Kotlin and Ruby!!! You can check out this video in order to know in detail on how you can implement the [CodeX API](https://github.com/Jaagrav/CodeX) in your next project.
 
-<iframe src="https://www.youtube.com/embed/bkwLETA1rKQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+### 1. HTTP GET Form Brute
 
-Here's the docs for the [CodeX API](https://github.com/Jaagrav/CodeX-API)
+Typically, I want to look at and inspect the script first so I can see how it needs to be called and with what script args.
 
-You can also check out the demo live by click on this [link](https://codex.jaagrav.in/).
+`less http-form-brute.nse`
 
-Follow [WebDevGoa](https://twitter.com/WebDevGoa) on Twitter in order to participate in contests and workshops that we conduct for you to get better at coding, follow now!! You can also win cool prizes!!!
+`w3m http-form-brute.nse`
 
-Happy Coding!
+`cat http-form-brute.nse`
+
+These commands above are all the same, just different ways of viewing the file. w3m would need to be installed to work, but it's a good favorite of mine to see files or links in temrinal 
+
+-----------------------
+
+[Copy of the script here](../public/assets/blogs-media/5-apis-to-inspire-you-for-your-next-project/http-form-brute.txt)
+
+##### But this is what I am generally looking for from the file. Usage and arguments.
+
+      -- @usage
+      -- nmap --script http-form-brute -p 80 <host>
+      --
+      -- @output
+      -- PORT     STATE SERVICE REASON
+      -- 80/tcp   open  http    syn-ack
+      -- | http-form-brute:
+      -- |   Accounts
+      -- |     Patrik Karlsson:secret - Valid credentials
+      -- |   Statistics
+      -- |_    Perfomed 60023 guesses in 467 seconds, average tps: 138
+      --
+      -- @args http-form-brute.path identifies the page that contains the form
+      --       (default: "/"). The script analyses the content of this page to
+      --       determine the form destination, method, and fields. If argument
+      --       passvar is specified then the form detection is not performed and
+      --       the path argument is instead used as the form submission destination
+      (the form action). Use the other arguments to define the rest of
+      --       the form manually as necessary.
+      -- @args http-form-brute.method sets the HTTP method (default: "POST")
+      -- @args http-form-brute.hostname sets the host header in case of virtual
+      --       hosting
+      -- @args http-form-brute.uservar (optional) sets the form field name that
+      --       holds the username used to authenticate.
+      -- @args http-form-brute.passvar sets the http-variable name that holds the
+      --       password used to authenticate. If this argument is set then the form
+      --       detection is not performed. Use the other arguments to define
+      --       the form manually.
+      -- @args http-form-brute.onsuccess (optional) sets the message/pattern
+      --       to expect on successful authentication
+      -- @args http-form-brute.onfailure (optional) sets the message/pattern
+      --       to expect on unsuccessful authentication
+      -- @args http-form-brute.sessioncookies Attempt to grab session cookies before
+      --       submitting the form. Setting this to "false" could speed up cracking
+      --       against forms that do not require any cookies to be set before logging 
+      --       in. Default: true
+
+**Now how do I call this?**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------
+**I'm still working on this article. Migrating it from my Notion page and adding some to it. 

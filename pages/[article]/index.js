@@ -16,7 +16,7 @@ export default function Blog(props) {
       <SEO
         title={`${props?.file?.title} / Blogs / Frisby`}
         description={props?.file?.excerpt}
-        image={`https://blog.jaagrav.in/assets/blogs-media/${props?.article}/thumbnail.webp`}
+        image={`https://blog.Brendan.in/assets/blogs-media/${props?.article}/thumbnail.webp`}
       />
       <Header isCollapsible={true} />
       <div className="px-8 md:px-32">

@@ -41,7 +41,7 @@ export default function Unsubscribe() {
       <SEO
         title="Unsubscribe / Frisby"
         description="Sorry to see you go, you can unsubscribe from my newsletter anytime you want to stop receiving mails from me."
-        image="https://blog.jaagrav.in/assets/images/home-page.webp"
+        image="https://blog.Brendan.in/assets/images/home-page.webp"
       />
       <Header />
       <div className="max-w-screen-lg mx-auto relative z-10 h-[50vh] flex items-center">

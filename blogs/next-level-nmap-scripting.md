@@ -1,6 +1,7 @@
 ---
 title: Nmap Scripts - Next Level
 publishedOn: December 13th, 2022
+slug: "next-level-nmap-scripting"
 excerpt: I want to show how powerful nmap can be, with it's built in 595 NSE script library of DOS, Vulnerability, Discovery, and many more catgeories these scripts are seperated into. You can choose to call them individually, or call an entire category like 'vuln' and check for every vulnerability test nmap has. 
 readingTime: 4 mins
 ---

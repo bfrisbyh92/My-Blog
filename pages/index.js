@@ -19,9 +19,9 @@ export default function Home({ data }) {
   return (
     <div className="">
       <SEO
-        title="Blogs / Jaagrav"
-        description="Checkout Jaagrav's blog where he writes about technology, javascript and a lot more than that. Visit the link to find out!"
-        image="https://blog.jaagrav.in/assets/images/home-page.webp"
+        title="Blogs / Brendan"
+        description="Checkout Brendan's blog where he writes about technology, javascript and a lot more than that. Visit the link to find out!"
+        image="https://blog.Brendan.in/assets/images/home-page.webp"
       />
       <Header />
       <div className="px-8 md:px-32">

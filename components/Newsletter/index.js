@@ -34,10 +34,10 @@ export default function Newsletter() {
   return (
     <div className="bg-black/50 p-6 rounded-[3rem] mt-8">
       <div className="text-white text-4xl">
-        Get notified everytime I post!!!
+        Get new content notifications
       </div>
       <div className="text-2xl opacity-50 text-white mt-2">
-        Subscribe to my newsletter and never miss any of my upcoming articles
+        Subscribe to my newsletter and never miss any of my upcoming articles or projects
       </div>
       {!success && (
         <div className="grid grid-cols-[1fr_auto] mt-4 gap-4">

@@ -140,13 +140,13 @@ I suggest looking around at these, using tools like less/cat to take a look at t
 ## [Check me out on Github](https://github.com/bfrisbyh92)
 ---------
 
-I am going to do a few common tasks that both Nmap and Metasploit can be used for. Sometimes Nmap even has an advantage over Metasploit. A good example of that is Nmap has a Slowloris DOS Vulnerability Check Script, in addition to a Slowloris DOS Attack Script. Metasploit only has the DOS attack. So It's important to know the best tool for the specific job you are working on. 
+I am going to do a few common tasks that both Nmap and Metasploit can be used for. Sometimes Nmap even has an advantage over Metasploit. A good example of that is Nmap has two modules for the Slowloris DOS(A Vulnerability Check, and the actual DOS attack module). Metasploit only has the DOS attack. So It's important to know the best tool for the specific job you are working on. 
 ---------------------------
 
 
 > I'll give a few examples how nmap scipting can be used. Also going to share a few tips and tricks. 
 
-### 1. HTTP GET Form Brute
+## 1. HTTP GET Form Brute
 
 Typically, I want to look at and inspect the script first so I can see how it needs to be called and with what script args.
 
@@ -211,7 +211,7 @@ These commands above are all the same, just different ways of viewing the file. 
 - The variables and script args can all be changed to meet the circumstance. Nmap is relatively flexible with syntax, I find putting script args in quotes helps it be interpreted easily.
 - When you first run the script, the first thing it does when loading is check the script args, you should see on screen if they were interpreted correctly or not. If they weren't look at the ones that did. What about their syntax made them not fail? And go from there narrowing down the error
 
-### Slowloris DOS Check and Attack
+## #2 Slowloris DOS Check and Attack
 
 Let's also check and attack with Slowloris DOS. 
 
@@ -275,12 +275,31 @@ Inside the Nmap scripts directory...
 
     -d, --script-trace, -vvv, http-slowloris.runforever=true are all optional. Port can be different depending on webserver, etc
 
+## #3 Random Usage Tips
 
+You can run entire categories. The catergoies are as follow...
 
+- vuln
+- discovery
+- dos
+- exploit
+- auth
+- brute
+- default(-sC will run that)
+- safe
+- version
+- malware
 
+All of which can be ran as a whole. So for example, I find the vuln scan extremely helpful.
 
+`nmap --script=vuln --script-trace -A --open -sV -d -vvv -sC <host>`
 
+Let's break down the above command. We are running the entire vuln category. --script-trace is going to show us what's going on and help debug if needed, same with -d and -vvv. -sC is adding the default nmap scripts. -sV is nmap's version scan. --open is only going to print open ports. -A is a aggressive scan. 
+
+Another helpful script is the vulners.nse script. Very similiar to running the entire vuln category, this will run it against a vulnerability database. You can set the minimum cvss and check hosts for vulnerabilites, big and small. 
+
+`nmap --script=vulners.nse <host>`
 
 
 ----------
-**This article is a work in progress** 
+**This article is a work in progress as am I, and hopefully you too!** 

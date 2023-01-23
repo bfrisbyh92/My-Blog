@@ -10,7 +10,7 @@ import {
 import * as matter from "gray-matter";
 
 export default function Home({ data }) {
-  const featuredArticleName = "atlan-internship",
+  const featuredArticleName = "next-level-nmap-scripting",
     featuredArticle = () => {
       for (let i = 0; i < data.files.length; i++) {
         if (data.files[i].file == featuredArticleName) return i;
@@ -20,7 +20,7 @@ export default function Home({ data }) {
     <div className="">
       <SEO
         title="Blogs / Brendan"
-        description="Checkout Brendan's blog where he writes about technology, javascript and a lot more than that. Visit the link to find out!"
+        description="Checkout Brendan's blog where he writes about software engineering, ethical hacking, and a ton more. Visit the link to find out!"
         image="https://blog.Brendan.in/assets/images/home-page.webp"
       />
       <Header />

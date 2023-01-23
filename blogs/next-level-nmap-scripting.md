@@ -8,17 +8,23 @@ readingTime: 4 mins
 ------------
 # Next Level Nmap Scripts
 ## By Brendan Frisby
-I want to talk about nmap scripts, because I often see that things on Metasploit about 75% of the modules can also be accomplished using Nmap. At this time there are 595 NSE scripts that come along with Nmap. They are continiously updated and the number fluctuates. These scripts are also conveniently seperated into catageroies and we will go in to whyI think that's important later. First let's make sure everyone is up and running. We are about to get deep into nmap, and by the end of this read you will be able to use every NSE script within the Nmap framework like a professional.
+I want to talk about nmap scripts, because I often see that things on Metasploit about 75% of the modules can also be accomplished using Nmap. At this time there are 595 NSE scripts that come along with Nmap. They are continiously updated and the number fluctuates. These scripts are also conveniently seperated into catageroies and we will go in to why I think that's important later. First let's make sure everyone is up and running. We are about to get deep into nmap, and by the end of this read you will be able to use every NSE script within the Nmap framework like a professional.
 ----------
 ### Some recources I made awhile ago - [Notion Page on Nmap Scripts](https://www.notion.so/alwayspwnable/Nmap-Scripts-28c7b4cb923e4785b9d189a6ddae4e0e)
 --------------
-Okay so depending what OS you are on, and what package manager you are using you will need to install Nmap differently. I'n my current case on a Mac M1 with Homebrew I am going to give the command...
+Okay so depending what OS you are on, and what package manager you are using you will need to install Nmap differently. I'n my current case on a Mac M1 with Homebrew so mine would look like this....
 
 `brew install nmap`
 
 Yours may be...
 
- `sudo apt install nmap` , `sudo apt-get install nmap`, `macports install nmap`, or `Any Package Manager in the World, please install thy nmap(this one may not work)`.
+`sudo apt install nmap` 
+ 
+`sudo apt-get install nmap`
+  
+`macports install nmap`
+   
+`Any Package Manager install nmap`
  
 Now that we have nmap, let's find the scripts and have a look.  
 
@@ -29,9 +35,13 @@ Now that we have nmap, let's find the scripts and have a look.
   `cd /opt/homebrew/share/nmap/scripts`
 
 
-The only other location and on most windows based machines, maybe even some M1's with Homebrew if that's installed in /usr/local will still be in /share/nmap/scripts.
+Other locations are 
 
-  `cd /share/nmap/scripts`
+`/usr/local/share/nmap/scripts`
+
+`/share/nmap/scripts`
+
+`cd /share/nmap/scripts`
 
 I suggest looking around at these, using tools like less/cat to take a look at the actual file and usage of it when called. You want to look at the script arguements to see the correct way to run a script.
 
@@ -130,11 +140,11 @@ I suggest looking around at these, using tools like less/cat to take a look at t
 ## [Check me out on Github](https://github.com/bfrisbyh92)
 ---------
 
-> I'll give 5 examples how nmap scipting can be used. Also going to share a few tips and tricks. 
-
 I am going to do a few common tasks that both Nmap and Metasploit can be used for. Sometimes Nmap even has an advantage over Metasploit. A good example of that is Nmap has a Slowloris DOS Vulnerability Check Script, in addition to a Slowloris DOS Attack Script. Metasploit only has the DOS attack. So It's important to know the best tool for the specific job you are working on. 
 ---------------------------
 
+
+> I'll give a few examples how nmap scipting can be used. Also going to share a few tips and tricks. 
 
 ### 1. HTTP GET Form Brute
 
@@ -191,14 +201,79 @@ These commands above are all the same, just different ways of viewing the file. 
       --       against forms that do not require any cookies to be set before logging 
       --       in. Default: true
 
-**Now how do I call this?**
+## Usage
+
+`nmap --script=http-form-brute --script-args "http-form-brute.path=/login.php" -p80 <host> `
+
+- Some tips, Adding --script-trace will allow you to see what's going on or why an error is occuring
+- Adding -d is for debugging also helps
+- Adding -v, -vv, -vvv, and it continues adding more v's but that adds verbosity
+- The variables and script args can all be changed to meet the circumstance. Nmap is relatively flexible with syntax, I find putting script args in quotes helps it be interpreted easily.
+- When you first run the script, the first thing it does when loading is check the script args, you should see on screen if they were interpreted correctly or not. If they weren't look at the ones that did. What about their syntax made them not fail? And go from there narrowing down the error
+
+### Slowloris DOS Check and Attack
+
+Let's also check and attack with Slowloris DOS. 
+
+Inside the Nmap scripts directory...
+
+`ls | grep slowloris`
+
+    Output
+
+    http-slowloris-check.nse
+    http-slowloris.nse
+
+`less  http-slowloris-check.nse`
 
 
+        ---
+        -- @usage
+        -- nmap --script http-slowloris-check  <target>
+        --
+        -- @output
+        -- PORT   STATE SERVICE REASON
+        -- 80/tcp open  http    syn-ack
+        -- | http-slowloris-check:
+        -- |   VULNERABLE:
+        -- |   Slowloris DOS attack
+        -- |     State: LIKELY VULNERABLE
+        -- |     IDs:  CVE:CVE-2007-6750
+        -- |       Slowloris tries to keep many connections to the target web server open and h
+        old
+        -- |       them open as long as possible.  It accomplishes this by opening connections 
+
+#### Usage 
+
+`nmap --script=http-slowloris-check -p80,8080 --script-trace -d -vv <host>`
 
 
+`less http-slowloris.nse`
 
+      ---
+      -- @usage
+      -- nmap --script http-slowloris --max-parallelism 400  <target>
+      --
+      -- @args http-slowloris.runforever Specify that the script should continue the
+      -- attack forever. Defaults to false.
+      -- @args http-slowloris.send_interval Time to wait before sending new http header datas
+      -- in order to maintain the connection. Defaults to 100 seconds.
+      -- @args http-slowloris.timelimit Specify maximum run time for DoS attack (30
+      -- minutes default).
+      --
+      -- @output
+      -- PORT     STATE SERVICE REASON  VERSION
+      -- 80/tcp   open  http    syn-ack Apache httpd 2.2.20 ((Ubuntu))
+      -- | http-slowloris:
+      -- |   Vulnerable:
+      -- |   the DoS attack took +2m22s
+      -- |   with 501 concurrent connections
+      -- |_  and 441 sent queries
+#### Usage
 
+`nmap --script=http-slowloris --max-parallelism 400 --script-args="http-slowloris.runforever=true" -p80 --script-trace -d -vvv`
 
+    -d, --script-trace, -vvv, http-slowloris.runforever=true are all optional. Port can be different depending on webserver, etc
 
 
 
@@ -208,4 +283,4 @@ These commands above are all the same, just different ways of viewing the file. 
 
 
 ----------
-**I'm still working on this article. Migrating it from my Notion page and adding some to it. 
+**This article is a work in progress** 

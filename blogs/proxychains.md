@@ -138,6 +138,6 @@ Pretty much any command can be used with proxychains. I found that Metasploit it
 
 `browsh --startup-url http://check.torproject.org`
 
-![usage](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/proxychains/usage.png)
+![usage](../public/assets/blogs-media/proxychains/usage.png)
 
 All will work for checking your Tor connection. Keep in mind, the later 3 examples are packages I have installed so they may not work for you. Awesome tools though and I reccommend w3m because it's my go to. 

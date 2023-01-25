@@ -138,11 +138,11 @@ If you are low on space, this is a bit smaller.
 
 So now let's see some of this in use. I'll try to give as many examples for common uses.
 
-`hydra -l root -p root mysql://<host> -d`
+`hydra -d -l root -p root mysql://<host>`
 
 -d is for debugging and gives a ton of output but you see 100% of what is happening behind the scenes(Every request in full). 
 
-`hydra -L myUserList.txt -P rockyou.txt mysql://<host> -v`
+`hydra -v -L myUserList.txt -P rockyou.txt mysql://<host> `
 
 -v is the verbosity I usually use. You can also use -V to see every combination tried but I prefer the -v bc it has limited output but more information than normal
 

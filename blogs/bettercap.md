@@ -15,11 +15,10 @@ readingTime: 5 mins
 
 ## Why I like Bettercap
 
-Bettercap is Ettercap's Successor and they, for the most part, knocked Bettercap out of the park. What they did not at all knock out of the park is their documenation. For example, for their Web-UI usage, they basically just say yes, we have one of those in their documenation and that's it. Show's you how to start the web-ui, practically zero usage. Luckily, I'm going to aim to cover that gap in this article. 
+Bettercap is Ettercap's Successor and they, for the most part, knocked Bettercap out of the park. The documentation is kind of lacking but I can understand why. They've made usage so easy, that if you don't understand what your doing they probably don't need to teach you in their documentation. 
 
-[Don't believe me? See for yourself.](https://www.bettercap.org/usage/webui/)
 
-One more thing, That Web-UI is cool but I won't use it anymore. It was awesome to have when first using Bettercap but the command line is where it's at.
+One more thing, That Web-UI is cool, It was awesome to have when first using Bettercap but the command line is where it's at.
 
 ---
 ### My [Wireless Adapter](https://www.amazon.com/Tp-Link-TL-WN722N-IEEE-802-11n-draft/dp/9800359850/?_encoding=UTF8&pd_rd_w=kIMf5&content-id=amzn1.sym.b4f172f0-a2ab-4ffa-ac9d-22e96231ca8e&pf_rd_p=b4f172f0-a2ab-4ffa-ac9d-22e96231ca8e&pf_rd_r=M1J7MN14V00BAF5B96SS&pd_rd_wg=EFNVK&pd_rd_r=43dffa20-5d5f-4e20-800f-5efdacd16c66&ref_=pd_gw_ci_mcx_mr_hp_atf_m)

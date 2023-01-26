@@ -15,7 +15,9 @@ Another interesting feature of ZSH is its ability to customize the shell's appea
 It also has a powerful history mechanism, where it saves the command history and allows searching and editing previous commands, which is very helpful for navigating and repeating previous commands, it also allows you to use the arrow keys to go back and forth through your command history.
 
 ## My Favorite Features
-### and How I get the most from ZSH
+
+and
+## and How I get the most from ZSH
 
 - Hotkey windows, absolutely amazing. For me, I have a keyboard shortcut for my hotkey window. What is a hotkey window? The image above attached to this article is a hotkey window
   

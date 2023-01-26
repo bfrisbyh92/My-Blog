@@ -21,8 +21,6 @@ Bettercap is Ettercap's Successor and they, for the most part, knocked Bettercap
 One more thing, That Web-UI is cool, It was awesome to have when first using Bettercap but the command line is where it's at.
 
 ---
-### My [Wireless Adapter](https://www.amazon.com/Tp-Link-TL-WN722N-IEEE-802-11n-draft/dp/9800359850/?_encoding=UTF8&pd_rd_w=kIMf5&content-id=amzn1.sym.b4f172f0-a2ab-4ffa-ac9d-22e96231ca8e&pf_rd_p=b4f172f0-a2ab-4ffa-ac9d-22e96231ca8e&pf_rd_r=M1J7MN14V00BAF5B96SS&pd_rd_wg=EFNVK&pd_rd_r=43dffa20-5d5f-4e20-800f-5efdacd16c66&ref_=pd_gw_ci_mcx_mr_hp_atf_m)
----
 *This wireless adapter has monitor mode, packet injection, access points, and ability to accept clients*
 -----
 

@@ -5,6 +5,7 @@ slug: "next-level-nmap-scripting"
 excerpt: I want to show how powerful nmap can be, with it's built in 595 NSE script library of DOS, Vulnerability, Discovery, and many more catgeories these scripts are seperated into. You can choose to call them individually, or call an entire category like 'vuln' and check for every vulnerability test nmap has. 
 readingTime: 4 mins
 ---
+![image](../public/assets/blogs-media/next-level-nmap-scripting/d.png)
 ------------
 # Next Level Nmap Scripts
 ## By Brendan Frisby
@@ -49,7 +50,7 @@ I suggest looking around at these, using tools like less/cat to take a look at t
 
   `ls | grep http`
 
-![frisby.zsh](../public/assets/blogs-media/5-apis-to-inspire-you-for-your-next-project/frisby.png)
+![frisbyzsh](https://github.com/bfrisbyh92/My-Blog/blob/d7273d509b778226e0405fc514818b95055b6f1c/public/assets/blogs-media/next-level-nmap-scripting/frisby.png)
 
   `ls | grep brute`
 

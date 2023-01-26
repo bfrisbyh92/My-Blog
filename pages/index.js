@@ -10,7 +10,7 @@ import {
 import * as matter from "gray-matter";
 
 export default function Home({ data }) {
-  const featuredArticleName = "next-level-nmap-scripting",
+  const featuredArticleName = "ejpt-certification",
     featuredArticle = () => {
       for (let i = 0; i < data.files.length; i++) {
         if (data.files[i].file == featuredArticleName) return i;

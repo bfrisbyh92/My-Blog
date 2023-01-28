@@ -223,8 +223,6 @@ and
     alias "speed=speedtest-cli"
     alias "en0=ifconfig en0"
     alias "spoofmymac=sudo spoof-mac randomize en0"
-    alias "spoofmyshit=sudo spoof-mac randomize en0"
-    alias "updatemyshit=brew update && brew upgrade && omz update" 
     alias "update-all=brew update && brew upgrade && omz 
     update"
 

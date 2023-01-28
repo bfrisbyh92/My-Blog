@@ -140,4 +140,7 @@ Pretty much any command can be used with proxychains. I found that Metasploit it
 
 ![usage](../public/assets/blogs-media/proxychains/usage.png)
 
+**Check out my script you can use with proxychains for custom config files**
+[Repo](https://github.com/bfrisbyh92/Proxy-Script)
+
 All will work for checking your Tor connection. Keep in mind, the later 3 examples are packages I have installed so they may not work for you. Awesome tools though and I reccommend w3m because it's my go to. 

@@ -54,6 +54,13 @@ We can set arp targets with
 
  `arp.spoof on`
 
+To include a caplet in your session, use...
+
+`caplets.show`
+
+copy the name of the caplet you want to use and...
+
+`include <Caplet Name>`
 
 **Not Finished Writing this article**
 

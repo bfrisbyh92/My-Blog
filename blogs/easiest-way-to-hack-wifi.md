@@ -33,55 +33,55 @@ When airgeddon is starting, it will go through a list of packages that need to b
 
 Now, fire up airgeddon again and make sure the checklist has everything installed.
 
-![check](../public/assets/blogs-media/easiest-way-to-hack-wifi/check.png)
+![check](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/check.png?raw=true)
 
 Proceed by choosing the adapter you want to use...
 
-![adapter](../public/assets/blogs-media/easiest-way-to-hack-wifi/adapter.png)
+![adapter](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/adapter.png?raw=true)
 
 Then we want to make sure airgeddon recognizes the card as being in monitor mode, sometimes it doesn't so it's good to just hit 2 before moving forward.
 
 
-![monitor](../public/assets/blogs-media/easiest-way-to-hack-wifi/monitor.png)
+![monitor](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/monitor.png?raw=true)
 
 Now we can deauth and capture PKMS or Handshakes
 
 
-![selectDeauth](../public/assets/blogs-media/easiest-way-to-hack-wifi/selectDeauth.png)
+![selectDeauth](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/selectDeauth.png?raw=true)
 
 In Monitor mode and ready to scan for target WiFi's **which we only ever test on our own network**
 
 
-![targets](../public/assets/blogs-media/easiest-way-to-hack-wifi/targets.png)
+![targets](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/targets.png?raw=true)
 
 I am the qwhat WiFi network, just a temporary guest network I setup for this demo.
 
 This is what it looks like while searching for targets, when enough have appeared you close the window that lists them.
 
-![targetz](../public/assets/blogs-media/easiest-way-to-hack-wifi/targetz.png)
+![targetz](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/targetz.png?raw=true)
 
 
 Let's select my network
 
 
-![selectNetwork](../public/assets/blogs-media/easiest-way-to-hack-wifi/selectMyNetwork.png)
+![selectNetwork](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/selectMyNetwork.png?raw=true)
 
 and select capture handshake, because it will search for both. PKMS will only search for PKMS, so I find handshake is the best of both worlds.
 
 
-![selectHand](../public/assets/blogs-media/easiest-way-to-hack-wifi/selectHand.png)
+![selectHand](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/selectHand.png?raw=true)
 
 Now we select the way in which it will deauth clients on our selected network, so they are forced to reconnect, allowing us to catch the PKMS/Handshake.
 
 
-![deauth](../public/assets/blogs-media/easiest-way-to-hack-wifi/deauth.png)
-![deauth2](../public/assets/blogs-media/easiest-way-to-hack-wifi/deauth2.png)
-![deauth3](../public/assets/blogs-media/easiest-way-to-hack-wifi/deauth3.png)
+![deauth](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/deauth.png?raw=true)
+![deauth2](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/deauth2.png?raw=true)
+![deauth3](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/deauth3.png?raw=true)
 
 We have a captured handshake! Now just to crack it. If we return to airgeddon's main menu, they have an option for that.
 
-![decrypt](../public/assets/blogs-media/easiest-way-to-hack-wifi/decrypt.png)
-![decrypt2](../public/assets/blogs-media/easiest-way-to-hack-wifi/decrypt2.png)
+![decrypt](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/decrypt.png?raw=true)
+![decrypt2](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/decrypt2.png?raw=true)
 
 I won't show the password, but you get the point.
 

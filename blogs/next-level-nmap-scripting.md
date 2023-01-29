@@ -11,7 +11,7 @@ readingTime: 4 mins
 ## By Brendan Frisby
 I want to talk about nmap scripts, because I often see that things on Metasploit about 75% of the modules can also be accomplished using Nmap. At this time there are 595 NSE scripts that come along with Nmap. They are continiously updated and the number fluctuates. These scripts are also conveniently seperated into catageroies and we will go in to why I think that's important later. First let's make sure everyone is up and running. We are about to get deep into nmap, and by the end of this read you will be able to use every NSE script within the Nmap framework like a professional.
 ----------
-### Some recources I made awhile ago - [Notion Page on Nmap Scripts](https://www.notion.so/alwayspwnable/Nmap-Scripts-28c7b4cb923e4785b9d189a6ddae4e0e)
+### Some recources I made awhile ago - ![Notion Page on Nmap Scripts](https://www.notion.so/alwayspwnable/Nmap-Scripts-28c7b4cb923e4785b9d189a6ddae4e0e)
 --------------
 Okay so depending what OS you are on, and what package manager you are using you will need to install Nmap differently. I'n my current case on a Mac M1 with Homebrew so mine would look like this....
 
@@ -50,7 +50,6 @@ I suggest looking around at these, using tools like less/cat to take a look at t
 
   `ls | grep http`
 
-![frisbyzsh](https://github.com/bfrisbyh92/My-Blog/blob/d7273d509b778226e0405fc514818b95055b6f1c/public/assets/blogs-media/next-level-nmap-scripting/frisby.png)
 
   `ls | grep brute`
 
@@ -135,10 +134,10 @@ I suggest looking around at these, using tools like less/cat to take a look at t
 -----------
 
 
-[I highly reccommend bookmarking this. It is a list of every nmap script and information about each](https://www.infosecmatter.com/nmap-nse-library/)
+![I highly reccommend bookmarking this. It is a list of every nmap script and information about each](https://www.infosecmatter.com/nmap-nse-library/)
 
 -----------
-## [Check me out on Github](https://github.com/bfrisbyh92)
+## ![Check me out on Github](https://github.com/bfrisbyh92)
 ---------
 
 I am going to do a few common tasks that both Nmap and Metasploit can be used for. Sometimes Nmap even has an advantage over Metasploit. A good example of that is Nmap has two modules for the Slowloris DOS(A Vulnerability Check, and the actual DOS attack module). Metasploit only has the DOS attack. So It's important to know the best tool for the specific job you are working on. 
@@ -161,7 +160,7 @@ These commands above are all the same, just different ways of viewing the file. 
 
 -----------------------
 
-[Copy of the script here](../public/assets/blogs-media/5-apis-to-inspire-you-for-your-next-project/http-form-brute.txt)
+![Copy of the script here](../public/assets/blogs-media/5-apis-to-inspire-you-for-your-next-project/http-form-brute.txt)
 
 ##### But this is what I am generally looking for from the file. Usage and arguments.
 

@@ -39,6 +39,6 @@ Overall, I found the eJPT course to be too easy and not challenging enough for m
 
 However, the eJPT course did provide me with a solid foundation in various skills such as ARP poisoning, Python scripting, tools like Metasploit and Burp Suite, Wireless Attacks, Exploitation, and Post-Exploitation techniques. It is a great starting point for building more advanced knowledge and skills in the field of penetration testing. I believe that for anyone to get the most out of this course, they must use the tools and techniques outside of the course constantly, as repetition is key to mastering any skill. From consistent exercising since age 18(30 now) so 12 years, I have learned that with consistent focus and effort, anyone can achieve their goals, one day at a time. It's important to set your sights on a direction, commit to it.
 
-Next Up for me... either the OSCP or CEH certifications
+Next Up for me... the OSCP and then OSWP.
 
 Thank you for reading, my doors always open!

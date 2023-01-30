@@ -19,9 +19,6 @@ Bettercap is Ettercap's Successor and they, for the most part, knocked Bettercap
 
 
 One more thing, That Web-UI is cool, It was awesome to have when first using Bettercap but the command line is where it's at.
-
----
-*This wireless adapter has monitor mode, packet injection, access points, and ability to accept clients*
 -----
 
 # **Using Bettercap**
@@ -56,13 +53,15 @@ We can set arp targets with
 
 To include a caplet in your session, use...
 
+`caplets.update`
+
 `caplets.show`
 
 copy the name of the caplet you want to use and...
 
 `include <Caplet Name>`
 
-**Not Finished Writing this article**
+**I will add a Bettercap + Beef-XSS hook article soon**
 
 
 

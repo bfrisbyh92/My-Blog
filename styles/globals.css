@@ -34,11 +34,11 @@ body {
 }
 
 :root {
-  --background: #151b28;
-  --background-b: #2a3241;
-  --pink: #513bff;
-  --indigo: #5cd700;
-  --text: #fff;
+  --background: #76aaea;
+  --background-b: #eab676;
+  --pink: #e95f24;
+  --indigo: #abd5db;
+  --text: #000000;
 }
 
 html {

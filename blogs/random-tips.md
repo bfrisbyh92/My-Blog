@@ -26,4 +26,4 @@ Overall, these tools have proven to be extremely helpful in completing tasks and
 - exiftool allows you to hide files inside images
   
 
-**More to come soon**
+**Adding over time**

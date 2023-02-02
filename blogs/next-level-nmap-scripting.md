@@ -141,10 +141,10 @@ I suggest looking around at these, using tools like less/cat/grep to take a look
 -----------
 
 
-![Great bookmark. This is a list of every nmap script and information about each](https://www.infosecmatter.com/nmap-nse-library/)
+[Great bookmark. This is a list of every nmap script and information about each](https://www.infosecmatter.com/nmap-nse-library/)
 
 -----------
-## ![Check me out on Github](https://github.com/bfrisbyh92)
+## [My Github, give a follow and message.](https://github.com/bfrisbyh92)
 ---------
 
 I am going to do a few common tasks that both Nmap and Metasploit can be used for. Sometimes Nmap even has an advantage over Metasploit. A good example of that is Nmap has two modules for the Slowloris DOS(A Vulnerability Check, and the actual DOS attack module). Metasploit only has the DOS attack. So It's important to know the best tool for the specific job you are working on. 
@@ -167,7 +167,7 @@ These commands above are all the same, just different ways of viewing the file. 
 
 -----------------------
 
-![Copy of the script here](../public/assets/blogs-media/5-apis-to-inspire-you-for-your-next-project/http-form-brute.txt)
+[Copy of the script here](../public/assets/blogs-media/5-apis-to-inspire-you-for-your-next-project/http-form-brute.txt)
 
 ##### But this is what I am generally looking for from the file. Usage and arguments.
 

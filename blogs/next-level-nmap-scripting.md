@@ -9,11 +9,11 @@ readingTime: 4 mins
 ------------
 # Next Level Nmap Scripts
 ## By Brendan Frisby
-I want to talk about nmap scripts, because I often see that things on Metasploit about 75% of the modules can also be accomplished using Nmap. At this time there are 595 NSE scripts that come along with Nmap. They are continiously updated and the number fluctuates. These scripts are also conveniently seperated into catageroies and we will go in to why I think that's important later. First let's make sure everyone is up and running. We are about to get deep into nmap, and by the end of this read you will be able to use every NSE script within the Nmap framework like a professional.
+I want to talk about nmap scripts, because I often see that things on Metasploit about 75% of the modules can also be accomplished using Nmap. At this time there are 595 NSE scripts that come along with Nmap. They are continiously updated and the number fluctuates. These scripts are also conveniently seperated into catageroies and we will go in to why I think that's important later. Let's dive in to nmap for a second.
 ----------
 ### Some recources I made awhile ago - ![Notion Page on Nmap Scripts](https://www.notion.so/alwayspwnable/Nmap-Scripts-28c7b4cb923e4785b9d189a6ddae4e0e)
 --------------
-Okay so depending what OS you are on, and what package manager you are using you will need to install Nmap differently. I'n my current case on a Mac M1 with Homebrew so mine would look like this....
+Okay so depending what OS you are on, and what package manager you are using you will need to install Nmap differently. I'n my current case on a Mac M1 with Homebrew so that's how I installed nmap....
 
 `brew install nmap`
 
@@ -27,7 +27,7 @@ Yours may be...
    
 `Any Package Manager install nmap`
  
-Now that we have nmap, let's find the scripts and have a look.  
+let's find the scripts and have a look.  
 
 
 *Mine are located at /opt/homebrew/share/nmap/scripts so I will...
@@ -38,13 +38,13 @@ Now that we have nmap, let's find the scripts and have a look.
 
 Other locations are 
 
-`/usr/local/share/nmap/scripts`
-
-`/share/nmap/scripts`
+`cd /usr/local/share/nmap/scripts`
 
 `cd /share/nmap/scripts`
 
-I suggest looking around at these, using tools like less/cat to take a look at the actual file and usage of it when called. You want to look at the script arguements to see the correct way to run a script.
+`cd /share/nmap/scripts`
+
+I suggest looking around at these, using tools like less/cat/grep to take a look at the actual file and usage of it when called. You want to look at the script arguements to see the correct way to run a script.
 
   `ls`
 
@@ -131,10 +131,17 @@ I suggest looking around at these, using tools like less/cat to take a look at t
       informix-brute.nse
       informix-query.nse
       informix-tables.nse
+
+
+`less http-form-brute.nse`
+
+`cat http-form-brute.nse`
+
+`w3m http-form-brute.nse`
 -----------
 
 
-![I highly reccommend bookmarking this. It is a list of every nmap script and information about each](https://www.infosecmatter.com/nmap-nse-library/)
+![Great bookmark. This is a list of every nmap script and information about each](https://www.infosecmatter.com/nmap-nse-library/)
 
 -----------
 ## ![Check me out on Github](https://github.com/bfrisbyh92)
@@ -156,7 +163,7 @@ Typically, I want to look at and inspect the script first so I can see how it ne
 
 `cat http-form-brute.nse`
 
-These commands above are all the same, just different ways of viewing the file. w3m would need to be installed to work, but it's a good favorite of mine to see files or links in temrinal 
+These commands above are all the same, just different ways of viewing the file. w3m would need to be installed to work, but it's a good favorite of mine to see files or links in terminal 
 
 -----------------------
 

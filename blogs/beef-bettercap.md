@@ -29,7 +29,7 @@ Beef is an open-source framework for penetration testing and security assessment
 Bettercap is a Swiss army knife for network attacks and monitoring. It can perform various functions such as ARP spoofing, DNS spoofing, and SSL stripping. By using Bettercap, a hacker can manipulate network traffic and launch man-in-the-middle attacks to compromise target devices.
 
 ## **Using Beef and Bettercap Together**
-In this demo, I am going to assume you have a working version of beef-xss and Bettercap already.
+In this demo, I am going to assume you have a working version of beef-xss and Bettercap already if you wanted to follow along. If not, this is still the process and shows how easy it is to accomplish in just a few commands.
 
 Start Beef with....
     `sudo beef-xss`
@@ -65,7 +65,7 @@ Start the arp spoof we set earlier..
 
 `arp.spoof on`
 
-We need to configure ssl strip
+We need to configure the http.proxy with ssl strip
 
 `set http.proxy.sslstrip true`
 

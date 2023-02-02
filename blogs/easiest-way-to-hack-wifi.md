@@ -87,7 +87,7 @@ I won't show the password, but you get the point.
 
 **Wifite may be easier to use. Wifite is an automated Python networking scripts, Airgeddon is better for learning, to see each step in the process. You get to select different deauth tactics, catch PKMS, Handshake, or both with Aireggon. You have a menu for each step, to decrypt using Hashcat or Aircrack-ng, etc. Wifite will do everything for you and either be successful or fail. Wifi can be configured further if you view the help page, it will do all the same things but out of the box it's just a automated networking pentest script. Both will get the job done but Airgeddon was a better tool for learning.**
 
-More to come with this adapter, hopefully access points, clients, etc.
+Hopefully will post access points/clients/sniffing with Python & Scapy blog soon.
 **Please always use your own network, and be considerate of others.**
 
 

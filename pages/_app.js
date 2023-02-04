@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
         className="h-screen w-screen fixed m-auto inset-0 bg-center bg-no-repeat bg-cover transition opacity-100"
         style={{
           // backgroundImage: `url("public/assets/images/bg.webp")`,
-          backgroundImage: `url("./assets/images/hero-section-bg-dark2.webp")`,
+          backgroundImage: `url("./assets/images/bg.webp")`,
         }}
       ></div>
       <NextNProgress color="#76aaea" />

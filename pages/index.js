@@ -4,7 +4,7 @@ import {
   SEO,
   FeaturedArticle,
   Article,
-  Newsletter,
+  // Newsletter,
 } from "../components";
 
 import * as matter from "gray-matter";
@@ -33,7 +33,7 @@ export default function Home({ data }) {
                   slug={data.files[featuredArticle()].file}
                   {...data.files[featuredArticle()].fileData}
                 />
-                <Newsletter />
+                {/* <Newsletter /> */}
               </div>
             </div>
             <div className="mt-8 md:mt-0">

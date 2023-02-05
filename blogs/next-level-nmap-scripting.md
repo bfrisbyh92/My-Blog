@@ -3,17 +3,17 @@ title: Nmap Scripts - Next Level
 publishedOn: December 13th, 2022
 slug: "next-level-nmap-scripting"
 excerpt: I want to show how powerful nmap can be, with it's built in 595 NSE script library of DOS, Vulnerability, Discovery, and many more catgeories these scripts are seperated into. You can choose to call them individually, or call an entire category like 'vuln' and check for every vulnerability test nmap has. 
-readingTime: 4 mins
+readingTime: 9 mins
 ---
-![image](../public/assets/blogs-media/next-level-nmap-scripting/d.png)
+
 ------------
 # Next Level Nmap Scripts
 ## By Brendan Frisby
 I want to talk about nmap scripts, because I often see that things on Metasploit about 75% of the modules can also be accomplished using Nmap. At this time there are 595 NSE scripts that come along with Nmap. They are continiously updated and the number fluctuates. These scripts are also conveniently seperated into catageroies and we will go in to why I think that's important later. Let's dive in to nmap for a second.
 ----------
-### Some recources I made awhile ago - ![Notion Page on Nmap Scripts](https://www.notion.so/alwayspwnable/Nmap-Scripts-28c7b4cb923e4785b9d189a6ddae4e0e)
+### Some recources I made awhile ago - Essentially the same as this article - [Notion Page on Nmap Scripts](https://www.notion.so/alwayspwnable/Nmap-Scripts-28c7b4cb923e4785b9d189a6ddae4e0e)
 --------------
-Okay so depending what OS you are on, and what package manager you are using you will need to install Nmap differently. I'n my current case on a Mac M1 with Homebrew so that's how I installed nmap....
+## Depending what OS you are on, and what package manager you are using you will need to install Nmap differently. I'n my current case on a Mac M1 with Homebrew so that's how I installed nmap....
 
 `brew install nmap`
 
@@ -30,7 +30,7 @@ Yours may be...
 let's find the scripts and have a look.  
 
 
-*Mine are located at /opt/homebrew/share/nmap/scripts so I will...
+## **Mine are located at /opt/homebrew/share/nmap/scripts so I will...**
 
 
   `cd /opt/homebrew/share/nmap/scripts`
@@ -44,7 +44,7 @@ Other locations are
 
 `cd /share/nmap/scripts`
 
-I suggest looking around at these, using tools like less/cat/grep to take a look at the actual file and usage of it when called. You want to look at the script arguements to see the correct way to run a script.
+## I suggest looking around at these, using tools like less/cat/grep to take a look at the actual file and usage of it when called. You want to look at the script arguements to see the correct way to run a script.
 
   `ls`
 
@@ -151,7 +151,7 @@ I am going to do a few common tasks that both Nmap and Metasploit can be used fo
 ---------------------------
 
 
-> I'll give a few examples how nmap scipting can be used. Also going to share a few tips and tricks. 
+> ***I'll give a few examples how nmap scipting can be used. Also going to share a few tips, like using entire nmap categories and specific scripts that check for vulnerabilities.***
 
 ## 1. HTTP GET Form Brute
 
@@ -169,7 +169,7 @@ These commands above are all the same, just different ways of viewing the file. 
 
 [Copy of the script here](../public/assets/blogs-media/5-apis-to-inspire-you-for-your-next-project/http-form-brute.txt)
 
-##### But this is what I am generally looking for from the file. Usage and arguments.
+## This is what I am generally looking for from the file. Usage and arguments.
 
       -- @usage
       -- nmap --script http-form-brute -p 80 <host>
@@ -208,6 +208,7 @@ These commands above are all the same, just different ways of viewing the file. 
       --       against forms that do not require any cookies to be set before logging 
       --       in. Default: true
 
+----------------------------------
 ## Usage
 
 `nmap --script=http-form-brute --script-args "http-form-brute.path=/login.php" -p80 <host> `
@@ -218,9 +219,12 @@ These commands above are all the same, just different ways of viewing the file. 
 - The variables and script args can all be changed to meet the circumstance. Nmap is relatively flexible with syntax, I find putting script args in quotes helps it be interpreted easily.
 - When you first run the script, the first thing it does when loading is check the script args, you should see on screen if they were interpreted correctly or not. If they weren't look at the ones that did. What about their syntax made them not fail? And go from there narrowing down the error
 
+
+----------------------------------
+
 ## #2 Slowloris DOS Check and Attack
 
-Let's also check and attack with Slowloris DOS. 
+### **Let's check if Slowloris DOS would be effective and if it is effective how to attack with Nmap.**
 
 Inside the Nmap scripts directory...
 
@@ -250,7 +254,8 @@ Inside the Nmap scripts directory...
         old
         -- |       them open as long as possible.  It accomplishes this by opening connections 
 
-#### Usage 
+----------------------------------
+## **Usage** 
 
 `nmap --script=http-slowloris-check -p80,8080 --script-trace -d -vv <host>`
 
@@ -276,13 +281,13 @@ Inside the Nmap scripts directory...
       -- |   the DoS attack took +2m22s
       -- |   with 501 concurrent connections
       -- |_  and 441 sent queries
-#### Usage
+## **Usage**
 
 `nmap --script=http-slowloris --max-parallelism 400 --script-args="http-slowloris.runforever=true" -p80 --script-trace -d -vvv`
 
     -d, --script-trace, -vvv, http-slowloris.runforever=true are all optional. Port can be different depending on webserver, etc
-
-## #3 Random Usage Tips
+----------------------------------
+## #3 Items I find Most Helpful
 
 You can run entire categories. The catergoies are as follow...
 
@@ -301,11 +306,51 @@ All of which can be ran as a whole. So for example, I find the vuln scan extreme
 
 `nmap --script=vuln --script-trace -A --open -sV -d -vvv -sC <host>`
 
-Let's break down the above command. We are running the entire vuln category. --script-trace is going to show us what's going on and help debug if needed, same with -d and -vvv. -sC is adding the default nmap scripts. -sV is nmap's version scan. --open is only going to print open ports. -A is a aggressive scan. 
+Let's break down the above command. We are running the entire vuln category. --script-trace is going to show us what's going on and help debug if needed, same with -d and -vvv. -sC is adding the default nmap scripts. -sV is nmap's version scan. --open is only going to print open ports. -A is a aggressive scan. -F is for a fast scan.
+----------------------------------
+The option -Pn in nmap stands for "no ping." It tells nmap to skip the host discovery stage and proceed to a full port scan of the target hosts, assuming that they are all up. This is useful when you want to scan targets that block or respond to the normal nmap host discovery probes, for example, because of firewalls, intrusion prevention systems, or just because they are heavily filtered.
+----------------------------------
 
-Another helpful script is the vulners.nse script. Very similiar to running the entire vuln category, this will run it against a vulnerability database. You can set the minimum cvss and check hosts for vulnerabilites, big and small. 
+# **The basic syntax of nmap is nmap [options] <target>, where <target> can be an IP address, hostname, or network range.**
 
+## **Here are some of the most common nmap options:**
+
+            -p: Specify the ports to scan.
+            -sS: Perform a stealth (SYN) scan.
+            -sU: Perform a UDP scan.
+            -sT: Perform a full (TCP) scan.
+            -O: Enable OS detection.
+            -A: Enable OS detection, version detection, script scanning, and traceroute.
+            --script: Run a specific script or a set of scripts.
+            -oN: Save the output to a normal format text file.
+            -oX: Save the output to an XML format file.
+            -oG: Save the output to a grep-able format file.
+
+----------------------------------
+## **Personal Tip:**
+
+The option --script-trace is used to show the debugging output of a script execution. I like to see what is happening or why something is failing, script-trace is how I do that. The option -d is nmap's debugging switch. You can add the -v option multiple times to increase the verbosity, for example -vv, -vvv, etc. The verbosity of the output provides more detailed information about the progress of the scan and can be useful for troubleshooting or understanding what nmap is doing.
+
+# **3 Most Helpful Scripts for Pentesting**
+My two personal favorite scripts for pentesting and just generally searching for vulnerabilities with Nmap....
+ 
+ ## #1
+ Vulners.nse Script. It is running the scan for vulnerabilities against vulners database. It can be ran, and will give tons of links to valid exploits for that particular target. Keep in my mind, they might not all work, maybe none of them will work sometimes. It is a Gem of an Nmap script.
 `nmap --script=vulners.nse <host>`
+
+## #2
+Nmap's own Vuln script is awesome as well. What you are doing when calling vuln, because it is not the name of an actual script if you look in the directory. It is Nmaps name for the entire category of vulnerability checks. It's a powerful tool for a penetration tester. Equivlant to the above vulners and very similiar output.
+
+`nmap --script=vuln <host> -Pn --script-trace`
+
+## #3 
+Nmap's Discovery category does a very good job of enumeration. I want to mention with all of these wide range tools, you get alot of failure. It's very rare an exploit just works for me without extreme configuration. What I mean by that is when you run an entire category, you arn't able to add in some of the script arguments for these scripts that are part of the category, so they fail. It doesn't mean they don't work. It means some scripts need individual attention for wanted output.
+
+`nmap --script=discovery <host> --script-trace`
+
+***Nmap is very forgiving in syntax. It says it needs to be nmap [options] <[host]>, but in my experience nmap runs regardless of where things are placed, unlike some command line tools.***
+
+
 
 
 ----------

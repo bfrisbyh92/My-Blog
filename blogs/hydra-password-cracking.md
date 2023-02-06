@@ -6,13 +6,13 @@ excerpt: A guide on using Hydra for cracking passwords accross multiple protocol
 readingTime: 4 mins
 ---
 
-## What is Hydra?
+# **What is Hydra?**
 
 Hydra is a powerful and versatile tool that is used for performing password cracking and brute-force attacks on various protocols and services. It can be used to crack login credentials for various services such as SSH, FTP, Telnet, and more. In this article, we will take a closer look at what Hydra is, how it works, and some of the best practices for using it. We will also explore some real-world examples of how this tool can be used to test the security of your own systems and networks. Whether you are a pentester, a security professional, or just someone who is interested in learning more about password cracking and security, this article will provide a comprehensive introduction to the capabilities and potential of the Hydra tool. I aim to answer some of the questions I had when first using Hydra because I don't often see things covered like resuming a scan or debugging in guides.
 
+----------------------------------
 
-
-## Installing
+# **Installing**
 
 Depending on what package manager you have on your system you will install it differently. Another way is to just clone the repository and I find this method I learn the best. I get a chance to look around the file structure and see at a minimum a bit of how this programs work, where/what it's executables are, and peek at things like xHydra or Hydra GTK. 
 
@@ -34,7 +34,9 @@ Alternative using Docker
 
 `docker pull vanhauser/hydra`
 
-## Usage
+----------------------------------
+
+## **Usage**
 
 Hydra is pretty simple to use, there just isn't that much to remember. I have picked up a few tricks with Hydra on along the way that I do not see in any other tutorials, I don't see it in their documentation. It can only be found out by repeated use of Hydra.
 
@@ -86,7 +88,7 @@ Will give you more info one those modules and how to use them but I still found 
           service   the service to crack (see below for supported protocols)
           OPT       some service modules support additional input (-U for module help)
 
-        Supported services: adam6500 asterisk cisco cisco-enable cobaltstrike cvs ftp[s] http[s]-{head|get|post} http[s]-{get|post}-form http-proxy http-proxy-urlenum icq imap[s] irc ldap2[s] ldap3[-{cram|digest}md5][s] mssql mysql nntp oracle-listener oracle-sid pcanywhere pcnfs pop3[s] redis rexec rlogin rpcap rsh rtsp s7-300 sip smb smtp[s] smtp-enum snmp socks5 ssh sshkey teamspeak telnet[s] vmauthd vnc xmpp
+        **Supported services: adam6500 asterisk cisco cisco-enable cobaltstrike cvs ftp[s] http[s]-{head|get|post} http[s]-{get|post}-form http-proxy http-proxy-urlenum icq imap[s] irc ldap2[s] ldap3[-{cram|digest}md5][s] mssql mysql nntp oracle-listener oracle-sid pcanywhere pcnfs pop3[s] redis rexec rlogin rpcap rsh rtsp s7-300 sip smb smtp[s] smtp-enum snmp socks5 ssh sshkey teamspeak telnet[s] vmauthd vnc xmpp**
 
         Hydra is a tool to guess/crack valid login/password pairs.
         Licensed under AGPL v3.0. The newest version is always available at;
@@ -109,10 +111,13 @@ Will give you more info one those modules and how to use them but I still found 
           hydra -l admin -p password ftp://[192.168.0.0/24]/
           hydra -L logins.txt -P pws.txt -M targets.txt ssh
 
+----------------------------------
 
-### So now we see a complete list of options. You can even set an enviroment varibale to use Hydra over a proxy. I prefer proxychains over that but still an option. 
+## **We see a complete list of options. You can even set an enviroment varibale to use Hydra over a proxy. I prefer proxychains over that but still an option.** 
 
-### Hydra forces you to use all the switches prior to declaring the module. All of the modules can be called like this. 
+----------------------------------
+
+## ***Hydra forces you to use all the switches prior to declaring the module. All of the modules can be called like this.***
 
 `hydra -l mysql -p mysql mysql://hostOrIpHere`
 
@@ -125,7 +130,8 @@ Typically you need to add a wordlist for both user and passwords. I want to poin
 - -R will resume scans. Very important. You will not be able to run some of these lists in one sitting, specially if you have no enumarted real users
 - -e nsr    try "n" null password, "s" login as pass and/or "r" reversed login
 
-## Recources 
+----------------------------------
+## **Recources** 
 You will need wordlists. SecLists is a great starting point.
 
 `git clone https://github.com/danielmiessler/SecLists.git`
@@ -134,7 +140,8 @@ If you are low on space, this is a bit smaller.
 
 `git clone --depth 1 https://github.com/danielmiessler/SecLists.git`
 
-## Cracking Usage
+----------------------------------
+## **Cracking Usage**
 
 So now let's see some of this in use. I'll try to give as many examples for common uses.
 
@@ -146,22 +153,28 @@ So now let's see some of this in use. I'll try to give as many examples for comm
 
 -v is the verbosity I usually use. You can also use -V to see every combination tried but I prefer the -v bc it has limited output but more information than normal
 
-**Now Let's add some more**
+----------------------------------
+
+## **Let's add more**
 
 `hydra -L myList.txt -P rockyou.txt -e nsr -F -T64 http-get://<host>/uploadPath:F=Wrong Password`
 
 
 Breaking this down, the -L flag specifies a list of users, as opposed to the -l flag which specifies a single username. The -P and -p flags are the same, and are used to specify a list of passwords or a single password. The -e nsr flag adds options for trying a null password, using the login as the password, and reversing the login. The -F flag will stop the attack when a working combination is found. The -T64 flag increases the number of tasks that can be run simultaneously, making the attack faster. The http-get module is usually used for servers, and the uploadsPath flag specifies the path to the restricted area that contains the login form. The ":" Hydra uses to separate the options. The letter "F" is used to specify a regex search for failure, in this case, it looks for the string "Wrong Password" in the response to determine if the attempt was successful or not.
 
+----------------------------------
 
-
-### What else can be added
+## **What else can be added?**
 
 I like to add the output so sometimes when I miss something on screen because the verbosity is too high I don't miss the combo if I set that to write to a file. We just use the -o switch.
 
 
 `hydra -L myList.txt -P rockyou.txt -e nsr -F -T64 -o FOUNDPASSWORDS.txt http-get://<host>/uploadPath:F=Wrong Password`
 
+----------------------------------
 
+***It's important to note that using tools like Hydra without permission is illegal and can cause serious damage to the targeted systems, it's always a good practice to test security in your own networks or with explicit permission.***
 
-**It's important to note that using tools like Hydra without permission is illegal and can cause serious damage to the targeted systems, it's always a good practice to test security in your own networks or with explicit permission.**
+----------------------------------
+### **Brendan Frisby**
+### [Github](https://github.com/bfrisbyh92)

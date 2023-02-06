@@ -5,7 +5,8 @@
   "scripts": {
     "start": "next start",
     "lint": "next lint",
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build"
   },
   "dependencies": {
     "@mdx-js/react": "^2.1.1",

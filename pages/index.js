@@ -4,7 +4,7 @@ import {
   SEO,
   FeaturedArticle,
   Article,
-  // Newsletter,
+  Newsletter,
 } from "../components";
 
 import * as matter from "gray-matter";

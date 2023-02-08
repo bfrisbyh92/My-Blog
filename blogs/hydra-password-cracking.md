@@ -113,7 +113,7 @@ Will give you more info one those modules and how to use them but I still found 
 
 ----------------------------------
 
-## **We see a complete list of options. You can even set an enviroment varibale to use Hydra over a proxy. I prefer proxychains over that but still an option.** 
+## **We see a complete list of options. You can set an enviroment varibale to use Hydra over a proxy. I prefer proxychains over that but still an option.** 
 
 ----------------------------------
 
@@ -172,6 +172,11 @@ I like to add the output so sometimes when I miss something on screen because th
 `hydra -L myList.txt -P rockyou.txt -e nsr -F -T64 -o FOUNDPASSWORDS.txt http-get://<host>/uploadPath:F=Wrong Password`
 
 ----------------------------------
+
+## Resuming A Session
+You can always resume the session with `hydra -R`. The file is called hydra.restore, if that files present you can resume the session, the hydra.restore file is specifically created when terminating a session that isn't finished so that you can continue where you left off. 
+
+`hydra -I`, or -I anywhere in the command will skip hydra looking for the resume file which is stored inside whatever directory you started the session.  If you used -I in the original session, you won't be able to restore it. The reason is the initial sessions command had the -I, so the originally command has inside of it to skip looking for a restore file.
 
 ***It's important to note that using tools like Hydra without permission is illegal and can cause serious damage to the targeted systems, it's always a good practice to test security in your own networks or with explicit permission.***
 

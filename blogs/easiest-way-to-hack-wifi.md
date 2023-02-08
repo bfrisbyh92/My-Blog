@@ -17,7 +17,7 @@ Obtaining the credentials for the WiFi network, or at the minimum a handshake or
 - Wordlists(seclists in this case, rockyou.txt)
 - TP-Link WN722 Wireless Adapter, which takes a bit of modding the driver but does support monitor mode and packet injection. As well as AP and clients. I got this adapter because I wanted one with all four. 
 
-So, if you on Kali and already have your adapter setup(which is a different tutorial), these are the steps to cracking a WiFi network.
+These are the steps to cracking a WiFi network with Airgeddon.
 
 ## Process
 
@@ -78,16 +78,15 @@ Now we select the way in which it will deauth clients on our selected network, s
 ![deauth2](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/deauth2.png?raw=true)
 ![deauth3](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/deauth3.png?raw=true)
 
-We have a captured handshake! Now just to crack it. If we return to airgeddon's main menu, they have an option for that.
+We have a captured handshake/PKMS. Now just to crack it. If we return to airgeddon's main menu, they have an option for decrypting with Aircrack or Hashcat.
 
 ![decrypt](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/decrypt.png?raw=true)
 ![decrypt2](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/easiest-way-to-hack-wifi/decrypt2.png?raw=true)
 
 I won't show the password, but you get the point.
 
-**Wifite may be easier to use. Wifite is an automated Python networking scripts, Airgeddon is better for learning, to see each step in the process. You get to select different deauth tactics, catch PKMS, Handshake, or both with Aireggon. You have a menu for each step, to decrypt using Hashcat or Aircrack-ng, etc. Wifite will do everything for you and either be successful or fail. Wifi can be configured further if you view the help page, it will do all the same things but out of the box it's just a automated networking pentest script. Both will get the job done but Airgeddon was a better tool for learning.**
+**Wifite may be easier to use. Wifite is an automated Python networking scripts, Airgeddon is better for learning, to see each step in the process. You get to select different deauth tactics, catch PKMS, Handshake, or both with Aireggon. You have a menu for each step, to decrypt using Hashcat or Aircrack-ng, etc. Wifite will do everything for you and either be successful or fail. Wifi can be configured further if you view the help page, it will do all the same things but out of the box it's an automated networking pentest script. Both will get the job done but Airgeddon was a better tool for learning.**
 
-Hopefully will post access points/clients/sniffing with Python & Scapy blog soon.
 **Please always use your own network, and be considerate of others.**
 
 

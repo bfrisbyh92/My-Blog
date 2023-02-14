@@ -35,8 +35,9 @@ Alternative using Docker
 `docker pull vanhauser/hydra`
 
 ----------------------------------
-
-## **Usage**
+# **What Can Hydra Crack?**
+ **Supported services: adam6500 asterisk cisco cisco-enable cobaltstrike cvs ftp[s] http[s]-{head|get|post} http[s]-{get|post}-form http-proxy http-proxy-urlenum icq imap[s] irc ldap2[s] ldap3[-{cram|digest}md5][s] mssql mysql nntp oracle-listener oracle-sid pcanywhere pcnfs pop3[s] redis rexec rlogin rpcap rsh rtsp s7-300 sip smb smtp[s] smtp-enum snmp socks5 ssh sshkey teamspeak telnet[s] vmauthd vnc xmpp**
+# **Usage**
 
 Hydra is pretty simple to use, there just isn't that much to remember. I have picked up a few tricks with Hydra on along the way that I do not see in any other tutorials, I don't see it in their documentation. It can only be found out by repeated use of Hydra.
 
@@ -48,9 +49,9 @@ or
 
 `hydra -U mysql`
 
-Will give you more info one those modules and how to use them but I still found their documentation kind of limited. Thse most detailed help menu you can find for hydra is this command.
-
-`hydra -hh`
+Will give you more info one those modules and how to use them but I still found their documentation kind of limited.
+ 
+## **The most detailed help menu you can find for hydra is this command below. There is no manpage.** 👉🏻`hydra -hh`
 
 
         Syntax: hydra [[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e nsr] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] [-w TIME] [-W TIME] [-f] [-s PORT] [-x MIN:MAX:CHARSET] [-c TIME] [-ISOuvVd46] [-m MODULE_OPT] [service://server[:PORT][/OPT]]
@@ -121,17 +122,31 @@ Will give you more info one those modules and how to use them but I still found 
 
 `hydra -l mysql -p mysql mysql://hostOrIpHere`
 
-Typically you need to add a wordlist for both user and passwords. I want to point a few switches/flags out. 
+# Let's look the important ones
+Typically you need to add a wordlist for both user and passwords. I want to point a few switches/flags out I find most helpful. 
 - -t is run TASKS number of connects in parallel per target (default: 16)
 - -T is run TASKS connects in parallel overall (for -M, default: 64).
+
+👆🏻 This will speed up you sessions with more tasks.
+
 - -f / -F   exit when a login/pass pair is found (-M: -f per host, -F global)
+
+👆🏻 This is going to help you stop the session as soon as a combination is found, either globally or per host.
+
 - -x MIN:MAX:CHARSET  password bruteforce generation, type "-x -h" to get help
-- ^^^ Will not let you bruteforce is the time estimation is unreasonable(Wish it did bc that's subjective)
-- -R will resume scans. Very important. You will not be able to run some of these lists in one sitting, specially if you have no enumarted real users
-- -e nsr    try "n" null password, "s" login as pass and/or "r" reversed login
+
+👆🏻 This allows you to brute force passwords, as opposed to a word list. Keep in mind, Hydra will not run the session if it think's the length it would take to crack the password is unreasonable. That's one reason that for a pure brute force, I'd rather run my own Python script. I don't care if it says 10 years, that's an assumption without accounting for luck and assuming the entire thing needed to run. I just don't use Hydra for a real brute force attempt.
+
+- -R will resume scans. 
+  
+👆🏻 **Very important.** 👆🏻 You will not be able to run some of these lists in one sitting. Hydra when you CTRL + C your session saves a hydra.restore file in the working directory. That file allows you to restore sessions where you left off.
+
+- -e nsr    
+ 
+👆🏻 I always throw  👆🏻 this in good good measure. -e stipulates it try a few different thing depending on what letters you add after it. They break down like this. 'n' = try null password, "s" = try username as password and/or "r" reversed login. You can add one, or all 3. -e=sn or -e nsr or any combo
 
 ----------------------------------
-## **Recources** 
+# **Recources** 
 You will need wordlists. SecLists is a great starting point.
 
 `git clone https://github.com/danielmiessler/SecLists.git`
@@ -151,7 +166,7 @@ So now let's see some of this in use. I'll try to give as many examples for comm
 
 `hydra -v -L myUserList.txt -P rockyou.txt mysql://<host> `
 
--v is the verbosity I usually use. You can also use -V to see every combination tried but I prefer the -v bc it has limited output but more information than normal
+-v is the verbosity I usually use. You can also use -V to see every combination tried but I prefer the -v bc it has limited output but more information than normal.
 
 ----------------------------------
 
@@ -173,12 +188,42 @@ I like to add the output so sometimes when I miss something on screen because th
 
 ----------------------------------
 
+# Cracking different services passwords
+
+If you've identified a service running that takes authentication, chances are Hydra has it covered. All of them can be completed with very small syntax changes, making Hydra so effective as a cracker. You just change the service, and if you need help on some of the more challenging services that may take a bit more configuration you can view the modules help info with...
+ 
+ `hydra -U http-post-form` 
+ 
+ or 
+ 
+ `hydra -U WhateverModuleYourTryingToCrack`
+
+ # Examples
+
+ `hydra -L myList.txt -P rockyou.txt irc://<IpAddress>`
+
+  `hydra -L myList.txt -P rockyou.txt mysql://<IpAddress>`
+
+   `hydra -L myList.txt -P rockyou.txt telnet://<IpAddress>`
+
+ `hydra -L myList.txt -P rockyou.txt ftp://<IpAddress>`
+
+ `hydra -L myList.txt -P rockyou.txt oracle-sid:/<IpAddress>`
+
+------------------------------------
+
 ## Resuming A Session
 You can always resume the session with `hydra -R`. The file is called hydra.restore, if that files present you can resume the session, the hydra.restore file is specifically created when terminating a session that isn't finished so that you can continue where you left off. 
 
-`hydra -I`, or -I anywhere in the command will skip hydra looking for the resume file which is stored inside whatever directory you started the session.  If you used -I in the original session, you won't be able to restore it. The reason is the initial sessions command had the -I, so the originally command has inside of it to skip looking for a restore file.
+`hydra -I`, or -I anywhere in the command will skip hydra looking for the resume file which is stored inside whatever directory you started the session. 
+
+👆🏻 Keep in mind if you use -I in the original command you can't pause and resume that session anymore.
+
+------------------------------------
 
 ***It's important to note that using tools like Hydra without permission is illegal and can cause serious damage to the targeted systems, it's always a good practice to test security in your own networks or with explicit permission.***
+
+If you are new to cracking passwords, I got started with BurpSuite, it's just to large of a GUI to effectively run long lists.
 
 ----------------------------------
 ### **Brendan Frisby**

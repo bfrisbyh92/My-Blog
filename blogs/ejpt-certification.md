@@ -1,13 +1,13 @@
 ---
 title: eJPT Pentesting Testing Certification Review
-publishedOn: January 23rd, 2023
+publishedOn: Febuary 13th, 2023
 slug: ejpt-certification
 excerpt: I recently completed the eJPT certification by eLearnSecurity on Pentesting and will give a review on the parts of the course I appreciated, who this certification is geared towards, and what it lacks. 
-readingTime: 7 mins
+readingTime: 8 mins
 ---
 
 # **The eJPT by eLearnSecurity and INE.com**
-## **Certified Junior Pentester**
+## [**Certified Penetration Tester**](https://drive.google.com/file/d/1B3XyQHf7r9UD15ROV5DN_z23L0i-9ozz/view)
 ### By [***Brendan Frisby***](https://brendanfrisby.live) 
 **[Github](https://github.com/bfrisbyh92)**
 
@@ -71,7 +71,7 @@ I would think you are safe to take it when you can enumerate any target easily i
 ------------------------------------
 
 
-# What the eJPT did do for me
+# What the eJPT did for me
 
 The eJPT course did provide me with a solid foundation in various skills such as ARP poisoning, Python scripting, tools like Metasploit and Burp Suite, Wireless Attacks, Exploitation, and Post-Exploitation techniques, Information Gathering, Vulnerability Assessment, and Reporting. It is a great starting point for building more advanced knowledge and skills in the field of Penetration Testing. What it really did for me was confirm that I'm in the right area, because I've never felt so charged and happy to be learning anything. 
 
@@ -92,4 +92,5 @@ The V2 course material took me a total of 2 months to complete, with an average 
 ###### *Working on the OSCP and will review it as well.*
 
 ## ***[Brendan Frisby](https://brendanfrisby.live)***
+## [eJPT Certification](https://drive.google.com/file/d/1B3XyQHf7r9UD15ROV5DN_z23L0i-9ozz/view)
 ## **[Github](https://github.com/bfrisbyh92)**

@@ -22,7 +22,7 @@ Open Source Intelligence (OSINT) refers to the collection, analysis, and dissemi
 ## **LittleBrother:**
 LittleBrother is a Python-based OSINT tool that allows you to gather information on a target from various sources. It can collect data from sources such as social media, domains, IP addresses, and email addresses. With LittleBrother, you can extract emails, phone numbers, social media profiles, and much more. LittleBrother can also perform reverse image searches to find out where a particular image has been used.
 
-![LittleBrother Screenshot 1](https://github.com/bfrisbyh92/My-Blog/blob/324252e4dcb9e2fac9a20ffce41449963008e50c/public/assets/blogs-media/coolest-osint-tools/thumbnail.webp?raw=true)
+![LittleBrother Screenshot 1](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/coolest-osint-tools/littlebrother1.webp?raw=true)
 
 ![lb2](https://github.com/bfrisbyh92/My-Blog/blob/d880a8019175727c47ccc091881626cd141f43a6/public/assets/blogs-media/coolest-osint-tools/littlebrother2.webp?raw=true)
 

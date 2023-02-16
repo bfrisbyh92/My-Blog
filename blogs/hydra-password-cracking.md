@@ -39,7 +39,7 @@ Alternative using Docker
  **Supported services: adam6500 asterisk cisco cisco-enable cobaltstrike cvs ftp[s] http[s]-{head|get|post} http[s]-{get|post}-form http-proxy http-proxy-urlenum icq imap[s] irc ldap2[s] ldap3[-{cram|digest}md5][s] mssql mysql nntp oracle-listener oracle-sid pcanywhere pcnfs pop3[s] redis rexec rlogin rpcap rsh rtsp s7-300 sip smb smtp[s] smtp-enum snmp socks5 ssh sshkey teamspeak telnet[s] vmauthd vnc xmpp**
 # **Usage**
 
-Hydra is pretty simple to use, there just isn't that much to remember. I have picked up a few tricks with Hydra on along the way that I do not see in any other tutorials, I don't see it in their documentation. It can only be found out by repeated use of Hydra.
+Hydra is pretty simple to use.
 
 If we just call hydra, we get the generally help page that docuements all the protocols they allow and some general usage examples. You can find more info on any one module by...
 

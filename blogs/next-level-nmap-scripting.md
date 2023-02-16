@@ -335,11 +335,11 @@ The option --script-trace is used to show the debugging output of a script execu
 My two personal favorite scripts for pentesting and just generally searching for vulnerabilities with Nmap....
  
  ## #1
- Vulners.nse Script. It is running the scan for vulnerabilities against vulners database. It can be ran, and will give tons of links to valid exploits for that particular target. Keep in my mind, they might not all work, maybe none of them will work sometimes. It is a Gem of an Nmap script.
+ Vulners.nse Script. It is running the scan for vulnerabilities against vulners database. It will give tons of links to valid exploits for that particular target. Keep in my mind, they might not all work, maybe none of them will work sometimes. It is a Gem of an Nmap script.
 `nmap --script=vulners.nse <host>`
 
 ## #2
-Nmap's own Vuln script is awesome as well. What you are doing when calling vuln, because it is not the name of an actual script if you look in the directory. It is Nmaps name for the entire category of vulnerability checks. It's a powerful tool for a penetration tester. Equivlant to the above vulners and very similiar output.
+Nmap's own Vuln script is awesome as well. Calling the entire Vulnerability category of scripts.
 
 `nmap --script=vuln <host> -Pn --script-trace`
 
@@ -354,4 +354,5 @@ Nmap's Discovery category does a very good job of enumeration. I want to mention
 
 
 ----------
-**This article is a work in progress as am I, and hopefully you too!** 
+**Remember to use your skill for good, not evil.** 
+***Those who have a sword, know how to use it, but keep it sheathed shall inherit the earth.***

@@ -49,7 +49,7 @@ or
 
 `hydra -U mysql`
 
-Will give you more info one those modules and how to use them but I still found their documentation kind of limited.
+Will give you more info one those modules and how to use them but I still found their documentation limited as these tools typically are.
  
 ## **The most detailed help menu you can find for hydra is this command below. There is no manpage.** 👉🏻`hydra -hh`
 
@@ -114,9 +114,10 @@ Will give you more info one those modules and how to use them but I still found 
 
 ----------------------------------
 
-## **We see a complete list of options. You can set an enviroment varibale to use Hydra over a proxy. I prefer proxychains over that but still an option.** 
+## **We see a complete list of options. You can set an enviroment varibale to use Hydra over a proxy. I prefer proxychains.** 
 
 ----------------------------------
+***There are two types of syntax Hydra will accept, I'm only going to cover one.***
 
 ## ***Hydra forces you to use all the switches prior to declaring the module. All of the modules can be called like this.***
 
@@ -127,23 +128,23 @@ Typically you need to add a wordlist for both user and passwords. I want to poin
 - -t is run TASKS number of connects in parallel per target (default: 16)
 - -T is run TASKS connects in parallel overall (for -M, default: 64).
 
-👆🏻 This will speed up you sessions with more tasks.
+This will speed up you sessions with more tasks.
 
 - -f / -F   exit when a login/pass pair is found (-M: -f per host, -F global)
 
-👆🏻 This is going to help you stop the session as soon as a combination is found, either globally or per host.
+This is going to help you stop the session as soon as a combination is found, either globally or per host.
 
 - -x MIN:MAX:CHARSET  password bruteforce generation, type "-x -h" to get help
 
-👆🏻 This allows you to brute force passwords, as opposed to a word list. Keep in mind, Hydra will not run the session if it think's the length it would take to crack the password is unreasonable. That's one reason that for a pure brute force, I'd rather run my own Python script. I don't care if it says 10 years, that's an assumption without accounting for luck and assuming the entire thing needed to run. I just don't use Hydra for a real brute force attempt.
+ This allows you to brute force passwords, as opposed to a word list. Keep in mind, Hydra will not run the session if it think's the length it would take to crack the password is unreasonable. That's one reason that for a pure brute force, I'd rather run my own Python script. I don't care if it says 10 years, that's an assumption without accounting for luck and assuming the entire thing needed to run. I just don't use Hydra for a real brute force attempt.
 
 - -R will resume scans. 
   
-👆🏻 **Very important.** 👆🏻 You will not be able to run some of these lists in one sitting. Hydra when you CTRL + C your session saves a hydra.restore file in the working directory. That file allows you to restore sessions where you left off.
+**Very important.** 👆🏻 You will not be able to run some of these lists in one sitting. Hydra when you CTRL + C your session saves a hydra.restore file in the working directory. That file allows you to restore sessions where you left off.
 
 - -e nsr    
  
-👆🏻 I always throw  👆🏻 this in good good measure. -e stipulates it try a few different thing depending on what letters you add after it. They break down like this. 'n' = try null password, "s" = try username as password and/or "r" reversed login. You can add one, or all 3. -e=sn or -e nsr or any combo
+ I always throw  👆🏻 this in good good measure. -e stipulates it try a few different thing depending on what letters you add after it. They break down like this. 'n' = try null password, "s" = try username as password and/or "r" reversed login. You can add one, or all 3. -e=sn or -e nsr or any combo
 
 ----------------------------------
 # **Recources** 
@@ -217,13 +218,13 @@ You can always resume the session with `hydra -R`. The file is called hydra.rest
 
 `hydra -I`, or -I anywhere in the command will skip hydra looking for the resume file which is stored inside whatever directory you started the session. 
 
-👆🏻 Keep in mind if you use -I in the original command you can't pause and resume that session anymore.
+ Keep in mind if you use -I in the original command you can't pause and resume that session anymore.
 
 ------------------------------------
 
 ***It's important to note that using tools like Hydra without permission is illegal and can cause serious damage to the targeted systems, it's always a good practice to test security in your own networks or with explicit permission.***
 
-If you are new to cracking passwords, I got started with BurpSuite, it's just to large of a GUI to effectively run long lists.
+If you are new to cracking passwords, I got started with BurpSuite, it's just to large of a GUI to effectively run long lists quickly.
 
 ----------------------------------
 ### **Brendan Frisby**

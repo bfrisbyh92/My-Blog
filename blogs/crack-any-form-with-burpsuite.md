@@ -14,46 +14,46 @@ I won't go into install because it's no different than installing any applicatio
 
 You add FoxyProxy extension, open it, and add a proxy setting with localhost/127.0.0.1 for the IP setting and 8080 for the port setting. Make sure the Proxy is active.
 
-![foxyproxy](../public/assets/blogs-media/crack-any-form-with-burpsuite/foxyproxyconfig.webp)
+![foxyproxy](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/foxyproxyconfig.webp?raw=true)
 
 With Foxy Proxy on and BurpSuite open, we need to turn on intercept with Burp. 
 
-![intercept](../public/assets/blogs-media/crack-any-form-with-burpsuite/turnonintercept.webp)
+![intercept](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/turnonintercept.webp?raw=true)
 
 From there we can navigate to the form
 
-![blanklogin](../public/assets/blogs-media/crack-any-form-with-burpsuite/blankloginform.webp)
+![blanklogin](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/blankloginform.webp?raw=true)
 
 Let's fill it out, send it and see what happends
 
-![loginFormInput](../public/assets/blogs-media/crack-any-form-with-burpsuite/loginformWinput.webp)
+![loginFormInput](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/loginformWinput.webp?raw=true)
 
 We see the forms POST request coming in from intercept...
-![sentForm](../public/assets/blogs-media/crack-any-form-with-burpsuite/sentTheForm.webp)
+![sentForm](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/sentTheForm.webp?raw=true)
 
 We need to send that request to the intruder section...
 
-![sendToIntruder](../public/assets/blogs-media/crack-any-form-with-burpsuite/sendCaughtFormToIntruder.webp)
+![sendToIntruder](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/sendCaughtFormToIntruder.webp?raw=true)
 
 From there we can load a password list...
 
-![loadList](./loadPasswordList.webp)
+![loadList](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/loadPasswordList.webp?raw=true)
 
 A few more configs need to be made...
 
 We need to define what a failure is. This is going to be a bad example, because this doesn't have the typical failure message but I had to use a form legally. So this is how you WOULD, typically extract the failure message inside Burps settings for this session.
 
-![extractText](../public/assets/blogs-media/crack-any-form-with-burpsuite/highlightedExtract.webp)
+![extractText](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/highlightedExtract.webp?raw=true)
 
-![settings](../public/assets/blogs-media/crack-any-form-with-burpsuite/clearedFormsWExtractedText.webp)
+![settings](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/clearedFormsWExtractedText.webp?raw=true)
 
 So in a normal situation that highlighted text would be the part of the response it returns on failure. We can run the test now. 
 
-![ranTest](../public/assets/blogs-media/crack-any-form-with-burpsuite/thumbnail.webp)
+![ranTest](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/thumbnail.webp?raw=true)
 
 If we look at each request/response...
 
-![request](../public/assets/blogs-media/crack-any-form-with-burpsuite/request.webp)
-![response](../public/assets/blogs-media/crack-any-form-with-burpsuite/response.webp)
+![request](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/request.webp?raw=true)
+![response](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/response.webp?raw=true)
 
 I'll work on a better example, or build my own form to show a better example because of liability I can't just crack any random form on the internet for a demo. The typical output, if this form had a failure string you'd be able to clearly see when it was successful or failed. It's the same concept.

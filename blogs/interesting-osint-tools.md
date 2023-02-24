@@ -1,5 +1,5 @@
 ---
-title: Coolest OSINT Tools
+title: Most Interesting Open Source Intelligence Tools
 publishedOn: Febuary 15th, 2023
 slug: coolest-osint-tools
 excerpt: Open Source Intelligence (OSINT) refers to the collection, analysis, and dissemination of information from publicly available sources, including but not limited to the internet. OSINT has become increasingly popular among law enforcement, intelligence agencies, and businesses, as well as individual researchers and journalists. With the rise of social media and other online platforms, there is an abundance of information available to be mined and analyzed.

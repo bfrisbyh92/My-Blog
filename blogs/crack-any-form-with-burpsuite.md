@@ -49,7 +49,7 @@ We need to define what a failure is. This is going to be a bad example, because 
 
 So in a normal situation that highlighted text would be the part of the response it returns on failure. We can run the test now. 
 
-![ranTest](https://github.com/bfrisbyh92/My-Blog/blob/6f02ee53830eb566d104b89313cdbe96f156c40e/public/assets/blogs-media/crack-any-form-with-burpsuite/thumbnail.webp?raw=true)
+![ranTest](https://github.com/bfrisbyh92/My-Blog/blob/main/public/assets/blogs-media/crack-any-form-with-burpsuite/oldthumbnail.webp?raw=true)
 
 If we look at each request/response...
 
